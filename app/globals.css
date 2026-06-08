@@ -993,3 +993,7 @@ ul, ol { list-style: none; }
 .animate-in--delay-2 { animation-delay: 0.2s; }
 .animate-in--delay-3 { animation-delay: 0.3s; }
 .animate-in--delay-4 { animation-delay: 0.4s; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

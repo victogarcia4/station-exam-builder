@@ -143,6 +143,137 @@ function CourseFilter({ value, onChange }) {
   );
 }
 
+// ── Image Generation ──────────────────────────────────────────────
+
+function buildStationPrompt(exercise, objectives) {
+  const topic = exercise || 'anatomy and physiology';
+  const focus = objectives?.length
+    ? objectives.slice(0, 2).join('; ')
+    : '';
+  return [
+    `Anatomy and physiology lab practical station: ${topic}.`,
+    focus ? `Key focus: ${focus}.` : '',
+    'Style: professional medical education image. High-contrast, detailed specimen photograph or anatomical diagram with clearly visible structures. Clean light background. Scientific quality suitable for student examination.',
+  ].filter(Boolean).join(' ');
+}
+
+function ImageGenModal({ station, onClose, onGenerated }) {
+  const [prompt, setPrompt] = useState(() => buildStationPrompt(station.exercise, station.learning_objectives));
+  const [status, setStatus] = useState('idle'); // idle | generating | done | error
+  const [generatedUrl, setGeneratedUrl] = useState(null);
+  const [error, setError] = useState('');
+
+  const displayImage = generatedUrl || station.image_url;
+
+  async function generate() {
+    setStatus('generating');
+    setError('');
+    try {
+      const res = await fetch('/api/admin/generate-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ stationId: station.id, prompt }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Generation failed');
+      setGeneratedUrl(data.imageUrl);
+      setStatus('done');
+      onGenerated();
+    } catch (err) {
+      setError(err.message);
+      setStatus('error');
+    }
+  }
+
+  const inputStyle = { width: '100%', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', background: 'var(--bg-surface)', color: 'var(--text-primary)', fontSize: 'var(--fs-sm)' };
+  const labelStyle = { display: 'block', fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' };
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={e => e.target === e.currentTarget && onClose()}>
+      <div className="card" style={{ width: '100%', maxWidth: '780px', padding: '2rem' }}>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+          <div>
+            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'var(--fs-xl)', margin: 0 }}>Generate Station Image</h2>
+            <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
+              Station {station.number} — {station.exercise} · <span style={{ color: '#8b5cf6' }}>flux-schnell</span>
+            </p>
+          </div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', color: 'var(--text-secondary)', padding: '0.25rem' }}>✕</button>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
+
+          {/* Image preview */}
+          <div>
+            <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              {generatedUrl ? '✓ Generated image (saved)' : 'Current image'}
+            </div>
+            {displayImage ? (
+              <img
+                src={displayImage}
+                alt={`Station ${station.number}`}
+                style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 'var(--radius-sm)', border: `2px solid ${generatedUrl ? '#10b981' : 'var(--border-default)'}` }}
+              />
+            ) : (
+              <div style={{ width: '100%', aspectRatio: '1', background: 'var(--bg-surface)', borderRadius: 'var(--radius-sm)', border: '2px dashed var(--border-default)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-tertiary)', fontSize: 'var(--fs-sm)' }}>
+                No image yet
+              </div>
+            )}
+            {generatedUrl && (
+              <p style={{ fontSize: 'var(--fs-xs)', color: '#10b981', marginTop: '0.4rem', textAlign: 'center' }}>
+                Saved to station — visible on exam immediately
+              </p>
+            )}
+          </div>
+
+          {/* Prompt + controls */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div>
+              <label style={labelStyle}>Prompt</label>
+              <textarea
+                style={{ ...inputStyle, minHeight: '160px', resize: 'vertical', fontFamily: 'inherit', lineHeight: 1.5 }}
+                value={prompt}
+                onChange={e => setPrompt(e.target.value)}
+              />
+              <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)', marginTop: '0.35rem' }}>
+                Edit to refine the result. Model: black-forest-labs/flux-schnell
+              </p>
+            </div>
+
+            {status === 'generating' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)' }}>
+                <span style={{ display: 'inline-block', width: '14px', height: '14px', border: '2px solid var(--accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+                Generating image…
+              </div>
+            )}
+
+            {error && (
+              <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                {error}
+              </p>
+            )}
+
+            <div style={{ display: 'flex', gap: '0.75rem' }}>
+              <button className="btn" onClick={onClose} style={{ flex: 1 }}>
+                {status === 'done' ? 'Done' : 'Cancel'}
+              </button>
+              <button
+                className="btn btn--primary"
+                onClick={generate}
+                disabled={status === 'generating' || !prompt.trim()}
+                style={{ flex: 1 }}
+              >
+                {status === 'generating' ? 'Generating…' : status === 'done' ? '↺ Regenerate' : '✨ Generate'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Question Editor Modal ─────────────────────────────────────────
 
 const BLOOM_LEVELS = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate'];
@@ -290,6 +421,7 @@ export default function AdminDashboard() {
   const [questions, setQuestions] = useState([]);
   const [questionModal, setQuestionModal] = useState(null); // { mode, stationId, stationLabel, question }
   const [deleteConfirm, setDeleteConfirm] = useState(null); // { id, questionNum, stationNum }
+  const [imageModal, setImageModal] = useState(null); // station object
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [deleteError, setDeleteError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -674,13 +806,23 @@ export default function AdminDashboard() {
                         <span style={{ fontWeight: 600, fontSize: 'var(--fs-sm)' }}>{station.exercise}</span>
                         <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)' }}>{station.questions.length} q</span>
                       </div>
-                      <button
-                        className="btn btn--primary"
-                        style={{ padding: '0.3rem 0.75rem', fontSize: 'var(--fs-xs)' }}
-                        onClick={() => setQuestionModal({ mode: 'create', stationId: station.id, stationLabel: `Station ${station.number} — ${station.exercise}`, question: null })}
-                      >
-                        + Add
-                      </button>
+                      <div style={{ display: 'flex', gap: '0.4rem' }}>
+                        <button
+                          className="btn"
+                          style={{ padding: '0.3rem 0.65rem', fontSize: 'var(--fs-xs)' }}
+                          title="Generate AI image for this station"
+                          onClick={() => setImageModal(station)}
+                        >
+                          🎨
+                        </button>
+                        <button
+                          className="btn btn--primary"
+                          style={{ padding: '0.3rem 0.75rem', fontSize: 'var(--fs-xs)' }}
+                          onClick={() => setQuestionModal({ mode: 'create', stationId: station.id, stationLabel: `Station ${station.number} — ${station.exercise}`, question: null })}
+                        >
+                          + Add
+                        </button>
+                      </div>
                     </div>
 
                     {/* Questions list */}
@@ -781,6 +923,19 @@ export default function AdminDashboard() {
           </div>
         )}
       </main>
+
+      {/* Image generation modal */}
+      {imageModal && (
+        <ImageGenModal
+          station={imageModal}
+          onClose={() => setImageModal(null)}
+          onGenerated={() => {
+            fetchQuestions(filterCourse);
+            // Update the local station's image_url so the preview refreshes immediately
+            setQuestions(qs => qs.map(s => s.id === imageModal.id ? { ...s, _refreshToken: Date.now() } : s));
+          }}
+        />
+      )}
 
       {/* Question editor modal */}
       {questionModal && (

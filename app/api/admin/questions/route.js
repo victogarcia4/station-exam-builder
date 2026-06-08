@@ -31,7 +31,7 @@ export async function GET(request) {
 
   const { data: stations, error } = await supabase
     .from('stations')
-    .select('id, number, exercise, questions(id, question_number, stem, options, correct_answer, bloom_level, rationale)')
+    .select('id, number, exercise, image_url, learning_objectives, questions(id, question_number, stem, options, correct_answer, bloom_level, rationale)')
     .eq('exam_id', exam.id)
     .order('number');
 
