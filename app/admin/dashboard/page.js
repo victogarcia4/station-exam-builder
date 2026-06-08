@@ -143,6 +143,141 @@ function CourseFilter({ value, onChange }) {
   );
 }
 
+// ── Question Editor Modal ─────────────────────────────────────────
+
+const BLOOM_LEVELS = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate'];
+
+function QuestionModal({ mode, stationId, stationLabel, question, onClose, onSaved }) {
+  const [form, setForm] = useState({
+    stem: question?.stem || '',
+    optA: question?.options?.A || '',
+    optB: question?.options?.B || '',
+    optC: question?.options?.C || '',
+    optD: question?.options?.D || '',
+    correct_answer: question?.correct_answer || 'A',
+    bloom_level: question?.bloom_level || 'Remember',
+    rationale: question?.rationale || '',
+  });
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState('');
+
+  function set(key) { return e => setForm(f => ({ ...f, [key]: e.target.value })); }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSaving(true);
+    setError('');
+    const payload = {
+      stem: form.stem.trim(),
+      options: { A: form.optA.trim(), B: form.optB.trim(), C: form.optC.trim(), D: form.optD.trim() },
+      correct_answer: form.correct_answer,
+      bloom_level: form.bloom_level,
+      rationale: form.rationale.trim() || null,
+    };
+    try {
+      const url = mode === 'edit' ? `/api/admin/questions/${question.id}` : '/api/admin/questions';
+      const res = await fetch(url, {
+        method: mode === 'edit' ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(mode === 'edit' ? payload : { ...payload, station_id: stationId }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Save failed');
+      onSaved();
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  const inputStyle = { width: '100%', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', background: 'var(--bg-surface)', color: 'var(--text-primary)', fontSize: 'var(--fs-sm)' };
+  const labelStyle = { display: 'block', fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' };
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={e => e.target === e.currentTarget && onClose()}>
+      <div className="card" style={{ width: '100%', maxWidth: '680px', maxHeight: '92vh', overflowY: 'auto', padding: '2rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+          <div>
+            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'var(--fs-xl)', margin: 0 }}>
+              {mode === 'edit' ? 'Edit Question' : 'Add Question'}
+            </h2>
+            <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>{stationLabel}</p>
+          </div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', color: 'var(--text-secondary)', padding: '0.25rem' }}>✕</button>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={labelStyle}>Question Stem *</label>
+            <textarea style={{ ...inputStyle, minHeight: '80px', resize: 'vertical', fontFamily: 'inherit' }}
+              value={form.stem} onChange={set('stem')} required />
+          </div>
+
+          {['A','B','C','D'].map(l => (
+            <div key={l} style={{ marginBottom: '0.75rem' }}>
+              <label style={labelStyle}>Option {l} *</label>
+              <input type="text" style={inputStyle} value={form[`opt${l}`]} onChange={set(`opt${l}`)} required />
+            </div>
+          ))}
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.25rem 0' }}>
+            <div>
+              <label style={labelStyle}>Correct Answer *</label>
+              <select style={inputStyle} value={form.correct_answer} onChange={set('correct_answer')}>
+                {['A','B','C','D'].map(l => <option key={l} value={l}>{l}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={labelStyle}>Bloom Level</label>
+              <select style={inputStyle} value={form.bloom_level} onChange={set('bloom_level')}>
+                {BLOOM_LEVELS.map(b => <option key={b} value={b}>{b}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <label style={labelStyle}>Rationale</label>
+            <textarea style={{ ...inputStyle, minHeight: '60px', resize: 'vertical', fontFamily: 'inherit' }}
+              value={form.rationale} onChange={set('rationale')} />
+          </div>
+
+          {error && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', marginBottom: '1rem' }}>{error}</p>}
+
+          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+            <button type="button" className="btn" onClick={onClose}>Cancel</button>
+            <button type="submit" className="btn btn--primary" disabled={saving}>
+              {saving ? 'Saving…' : mode === 'edit' ? 'Save Changes' : 'Add Question'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function DeleteConfirm({ questionNum, stationNum, onConfirm, onCancel, loading, error }) {
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}>
+      <div className="card" style={{ maxWidth: '400px', width: '100%', padding: '2rem', textAlign: 'center' }}>
+        <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🗑️</div>
+        <h3 style={{ fontFamily: 'var(--ff-display)', marginBottom: '0.5rem' }}>Delete Question?</h3>
+        <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', marginBottom: '1.5rem' }}>
+          Station {stationNum} · Q{questionNum} — this cannot be undone.
+        </p>
+        {error && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', marginBottom: '1rem' }}>{error}</p>}
+        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>
+          <button className="btn" onClick={onCancel}>Cancel</button>
+          <button className="btn" onClick={onConfirm} disabled={loading}
+            style={{ background: '#ef4444', color: '#fff', border: 'none' }}>
+            {loading ? 'Deleting…' : 'Delete'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main Component ────────────────────────────────────────────────
 
 export default function AdminDashboard() {
@@ -152,6 +287,11 @@ export default function AdminDashboard() {
   const [attempts, setAttempts] = useState([]);
   const [analytics, setAnalytics] = useState([]);
   const [charts, setCharts] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [questionModal, setQuestionModal] = useState(null); // { mode, stationId, stationLabel, question }
+  const [deleteConfirm, setDeleteConfirm] = useState(null); // { id, questionNum, stationNum }
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [deleteError, setDeleteError] = useState('');
   const [loading, setLoading] = useState(true);
 
   const [filterCourse, setFilterCourse] = useState('all');
@@ -176,6 +316,21 @@ export default function AdminDashboard() {
     }
   }, [router]);
 
+  const fetchQuestions = useCallback(async (course) => {
+    const target = course === 'all' ? 'BIOL2401' : course;
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/admin/questions?course=${target}`);
+      if (res.status === 401) { router.push('/admin'); return; }
+      const json = await res.json();
+      setQuestions(json.stations || []);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  }, [router]);
+
   useEffect(() => {
     fetchData('overview', 'all');
     fetchData('attempts', 'all');
@@ -184,12 +339,14 @@ export default function AdminDashboard() {
   useEffect(() => {
     if (tab === 'analytics' && analytics.length === 0) fetchData('analytics', filterCourse);
     if (tab === 'charts' && !charts) fetchData('charts', filterCourse);
+    if (tab === 'questions') fetchQuestions(filterCourse);
   }, [tab]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     fetchData('overview', filterCourse);
     if (tab === 'charts') fetchData('charts', filterCourse);
     if (tab === 'analytics') { setAnalytics([]); fetchData('analytics', filterCourse); }
+    if (tab === 'questions') fetchQuestions(filterCourse);
   }, [filterCourse]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const filtered = attempts.filter(a => {
@@ -202,6 +359,23 @@ export default function AdminDashboard() {
     }
     return true;
   });
+
+  async function handleDeleteQuestion() {
+    if (!deleteConfirm) return;
+    setDeleteLoading(true);
+    setDeleteError('');
+    try {
+      const res = await fetch(`/api/admin/questions/${deleteConfirm.id}`, { method: 'DELETE' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Delete failed');
+      setDeleteConfirm(null);
+      fetchQuestions(filterCourse);
+    } catch (err) {
+      setDeleteError(err.message);
+    } finally {
+      setDeleteLoading(false);
+    }
+  }
 
   const filteredAnalytics = filterCourse === 'all' ? analytics : analytics.filter(q => q.course_code === filterCourse);
   const uniqueSections = [...new Set(attempts.map(a => a.course_section).filter(Boolean))].sort();
@@ -302,7 +476,7 @@ export default function AdminDashboard() {
         </div>
         <div className="topbar__meta" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
           <button
-            onClick={() => fetchData(tab === 'charts' ? 'charts' : tab, filterCourse)}
+            onClick={() => tab === 'questions' ? fetchQuestions(filterCourse) : fetchData(tab === 'charts' ? 'charts' : tab, filterCourse)}
             style={{ padding: '0.4rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', background: 'transparent', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', cursor: 'pointer' }}
           >
             Refresh
@@ -317,7 +491,7 @@ export default function AdminDashboard() {
 
         {/* Tabs */}
         <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)' }}>
-          {['overview', 'charts', 'attempts', 'analytics'].map(t => (
+          {['overview', 'charts', 'attempts', 'analytics', 'questions'].map(t => (
             <button key={t} onClick={() => setTab(t)}
               style={{
                 padding: '0.6rem 1.25rem',
@@ -480,6 +654,87 @@ export default function AdminDashboard() {
           </div>
         )}
 
+        {/* ── QUESTIONS ── */}
+        {tab === 'questions' && (
+          <div>
+            <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', marginBottom: '1.5rem' }}>
+              {filterCourse === 'all' ? 'Showing BIOL 2401 — select a specific course to edit BIOL 2402' : `Editing ${filterCourse.replace('BIOL', 'BIOL ')} questions`} · {questions.reduce((n, s) => n + s.questions.length, 0)} questions across {questions.length} stations
+            </p>
+
+            {loading ? <p style={{ color: 'var(--text-secondary)' }}>Loading…</p> : questions.length === 0 ? (
+              <p style={{ color: 'var(--text-secondary)' }}>No stations found.</p>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {questions.map(station => (
+                  <div key={station.id} className="card" style={{ padding: 0, overflow: 'hidden' }}>
+                    {/* Station header */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.85rem 1.25rem', borderBottom: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span className="badge badge--station" style={{ minWidth: '3rem', textAlign: 'center' }}>St {station.number}</span>
+                        <span style={{ fontWeight: 600, fontSize: 'var(--fs-sm)' }}>{station.exercise}</span>
+                        <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)' }}>{station.questions.length} q</span>
+                      </div>
+                      <button
+                        className="btn btn--primary"
+                        style={{ padding: '0.3rem 0.75rem', fontSize: 'var(--fs-xs)' }}
+                        onClick={() => setQuestionModal({ mode: 'create', stationId: station.id, stationLabel: `Station ${station.number} — ${station.exercise}`, question: null })}
+                      >
+                        + Add
+                      </button>
+                    </div>
+
+                    {/* Questions list */}
+                    {station.questions.length === 0 ? (
+                      <p style={{ padding: '0.75rem 1.25rem', color: 'var(--text-tertiary)', fontSize: 'var(--fs-sm)' }}>No questions yet.</p>
+                    ) : (
+                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--fs-sm)' }}>
+                        <tbody>
+                          {station.questions.map((q, qi) => (
+                            <tr key={q.id} style={{ borderBottom: qi < station.questions.length - 1 ? '1px solid var(--border-subtle)' : 'none' }}
+                              onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-card-hover)'}
+                              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
+                              <td style={{ padding: '0.6rem 1.25rem', color: 'var(--text-tertiary)', width: '3rem', fontWeight: 600 }}>Q{q.question_number}</td>
+                              <td style={{ padding: '0.6rem 0.5rem', flex: 1 }}>
+                                <span style={{ color: 'var(--text-primary)' }}>
+                                  {q.stem?.length > 100 ? q.stem.slice(0, 100) + '…' : q.stem}
+                                </span>
+                              </td>
+                              <td style={{ padding: '0.6rem 0.5rem', whiteSpace: 'nowrap' }}>
+                                <span style={{ fontSize: 'var(--fs-xs)', padding: '0.15rem 0.4rem', borderRadius: '4px', background: `${bloomColor(q.bloom_level)}22`, color: bloomColor(q.bloom_level) }}>
+                                  {q.bloom_level}
+                                </span>
+                              </td>
+                              <td style={{ padding: '0.6rem 0.5rem', whiteSpace: 'nowrap' }}>
+                                <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)' }}>Ans: <strong style={{ color: 'var(--accent)' }}>{q.correct_answer}</strong></span>
+                              </td>
+                              <td style={{ padding: '0.6rem 1.25rem 0.6rem 0.5rem', whiteSpace: 'nowrap' }}>
+                                <button
+                                  className="btn"
+                                  style={{ padding: '0.25rem 0.6rem', fontSize: 'var(--fs-xs)', marginRight: '0.4rem' }}
+                                  onClick={() => setQuestionModal({ mode: 'edit', stationId: station.id, stationLabel: `Station ${station.number} — ${station.exercise}`, question: q })}
+                                >
+                                  Edit
+                                </button>
+                                <button
+                                  className="btn"
+                                  style={{ padding: '0.25rem 0.6rem', fontSize: 'var(--fs-xs)', borderColor: 'rgba(239,68,68,0.4)', color: '#ef4444' }}
+                                  onClick={() => { setDeleteError(''); setDeleteConfirm({ id: q.id, questionNum: q.question_number, stationNum: station.number }); }}
+                                >
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* ── ANALYTICS ── */}
         {tab === 'analytics' && (
           <div>
@@ -526,6 +781,30 @@ export default function AdminDashboard() {
           </div>
         )}
       </main>
+
+      {/* Question editor modal */}
+      {questionModal && (
+        <QuestionModal
+          mode={questionModal.mode}
+          stationId={questionModal.stationId}
+          stationLabel={questionModal.stationLabel}
+          question={questionModal.question}
+          onClose={() => setQuestionModal(null)}
+          onSaved={() => { setQuestionModal(null); fetchQuestions(filterCourse); }}
+        />
+      )}
+
+      {/* Delete confirmation dialog */}
+      {deleteConfirm && (
+        <DeleteConfirm
+          questionNum={deleteConfirm.questionNum}
+          stationNum={deleteConfirm.stationNum}
+          onConfirm={handleDeleteQuestion}
+          onCancel={() => { setDeleteConfirm(null); setDeleteError(''); }}
+          loading={deleteLoading}
+          error={deleteError}
+        />
+      )}
     </div>
   );
 }
