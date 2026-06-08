@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { getCourse, getStations, calculateScore, getBloomClass } from '../../lib/examData';
+import { getExamData, calculateScore, getBloomClass, saveAttempt, completeAttempt } from '../../lib/examData';
 import { exportResultsPdf } from '../../lib/pdfExport';
 
 function ExamContent() {
@@ -17,20 +17,53 @@ function ExamContent() {
   const examDate = searchParams.get('date') || new Date().toISOString().slice(0, 10);
   const mode = searchParams.get('mode') || 'study';
 
-  // Load course data
-  const course = getCourse(courseCode);
-  const stations = getStations(course.bank);
-  const totalStations = stations.length;
-  const totalQuestions = course.bank.length;
-  const examSeconds = totalQuestions * 60;
-
   // State
+  const [loading, setLoading] = useState(true);
+  const [examData, setExamData] = useState(null);
+  const [attemptId, setAttemptId] = useState(null);
   const [screen, setScreen] = useState('station'); // 'station' | 'results'
   const [stationIndex, setStationIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [remainingSeconds, setRemainingSeconds] = useState(examSeconds);
+  const [remainingSeconds, setRemainingSeconds] = useState(0);
   const timerRef = useRef(null);
   const startTimeRef = useRef(Date.now());
+
+  // Load exam data and create attempt
+  useEffect(() => {
+    async function initializeExam() {
+      try {
+        // 1. Fetch exam data from Supabase
+        const data = await getExamData(courseCode);
+        setExamData(data);
+        setRemainingSeconds(data.bank.length * 60);
+
+        // 2. Save attempt to database
+        const attempt = await saveAttempt({
+          examId: data.examId,
+          studentName,
+          studentEmail,
+          section,
+          mode,
+          startedAt: new Date().toISOString(),
+        });
+        setAttemptId(attempt.id);
+
+        setLoading(false);
+        startTimeRef.current = Date.now();
+      } catch (error) {
+        console.error('Error initializing exam:', error);
+        setLoading(false);
+        // TODO: Show error state to user
+      }
+    }
+    initializeExam();
+  }, [courseCode, studentName, studentEmail, section, mode]);
+
+  // Derived values
+  const stations = examData?.stations || [];
+  const allQuestions = examData?.bank || [];
+  const totalStations = stations.length;
+  const totalQuestions = allQuestions.length;
 
   // Timer for exam mode
   useEffect(() => {
@@ -66,12 +99,25 @@ function ExamContent() {
     setAnswers(prev => ({ ...prev, [String(qid)]: letter }));
   }
 
-  function nextStation() {
+  async function nextStation() {
     if (stationIndex < totalStations - 1) {
       setStationIndex(i => i + 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       if (timerRef.current) clearInterval(timerRef.current);
+
+      // Complete attempt and save to database
+      if (attemptId && allQuestions.length > 0) {
+        const durationSecs = Math.round((Date.now() - startTimeRef.current) / 1000);
+        const scoreData = calculateScore(allQuestions, answers);
+        try {
+          await completeAttempt(attemptId, scoreData, durationSecs, answers, allQuestions);
+        } catch (error) {
+          console.error('Error saving attempt:', error);
+          // Continue to results screen even if save fails
+        }
+      }
+
       setScreen('results');
     }
   }
@@ -89,15 +135,34 @@ function ExamContent() {
   }
 
   async function handleExportPdf() {
-    const scoreData = calculateScore(course.bank, answers);
+    const scoreData = calculateScore(allQuestions, answers);
     await exportResultsPdf({
       student: studentName,
       email: studentEmail,
       section,
       examDate,
-      course,
+      course: {
+        code: courseCode,
+        name: 'Anatomy & Physiology I',
+        label: `${courseCode} · Lab Practical Exam #1`,
+        bank: allQuestions,
+      },
       scoreData,
     });
+  }
+
+  // Loading state
+  if (loading || !examData) {
+    return (
+      <div className="shell">
+        <div className="main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Loading Exam...</p>
+            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Fetching {courseCode} questions from database</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Current station
@@ -109,7 +174,7 @@ function ExamContent() {
 
   // ──────────── RESULTS SCREEN ────────────
   if (screen === 'results') {
-    const scoreData = calculateScore(course.bank, answers);
+    const scoreData = calculateScore(allQuestions, answers);
     const durationSecs = Math.round((Date.now() - startTimeRef.current) / 1000);
     const durationMin = Math.floor(durationSecs / 60);
 
@@ -117,7 +182,7 @@ function ExamContent() {
       <div className="shell">
         <header className="topbar">
           <div className="topbar__brand">
-            <span className="topbar__title">{course.label}</span>
+            <span className="topbar__title">BIOL {courseCode} · Lab Practical Exam #1</span>
             <span className="topbar__subtitle">Performance Report</span>
           </div>
         </header>
@@ -197,7 +262,7 @@ function ExamContent() {
     <div className="shell">
       <header className="topbar">
         <div className="topbar__brand">
-          <span className="topbar__title">{course.label}</span>
+          <span className="topbar__title">{courseCode} · Lab Practical Exam #1</span>
           <span className="topbar__subtitle">
             {mode === 'study' ? 'Study Guide' : 'Exam'} · Section {section} · Station {station.number} of {totalStations}
           </span>

@@ -1,12 +1,35 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { getAvailableCourses, validateEmail } from '../lib/examData';
 
 export default function LandingPage() {
   const router = useRouter();
-  const courses = getAvailableCourses();
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch available courses on mount
+  useEffect(() => {
+    async function loadCourses() {
+      try {
+        const coursesData = await getAvailableCourses();
+        setCourses(coursesData);
+      } catch (error) {
+        console.error('Error loading courses:', error);
+        // Fallback to BIOL2401 if fetch fails
+        setCourses([{
+          code: 'BIOL2401',
+          name: 'Anatomy & Physiology I',
+          stationCount: 28,
+          questionCount: 105,
+        }]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadCourses();
+  }, []);
 
   const [form, setForm] = useState({
     name: '',
@@ -63,6 +86,17 @@ export default function LandingPage() {
   }
 
   const selectedCourse = courses.find(c => c.code === form.course) || courses[0];
+
+  // Show loading state while fetching courses
+  if (loading) {
+    return (
+      <div className="shell">
+        <div className="main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="shell">
