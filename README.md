@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Station Exam Builder
 
-## Getting Started
+> Station-based practical exam platform for Anatomy & Physiology lab courses (BIOL 2401/2402)
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+## 🎯 Overview
+
+Station Exam Builder is a modern web application designed for anatomy & physiology lab practical exams. Students navigate through stations with images, answer multiple-choice questions, and receive instant feedback in study mode or timed assessments in exam mode.
+
+### Key Features
+
+- **📚 Dual Modes:** Study Guide (free navigation + instant feedback) | Exam (timed + sequential)
+- **🖼️ 28 Stations:** High-quality AI-generated anatomical diagrams with numbered labels
+- **❓ 105 Questions:** Complete question bank with rationales and learning objectives
+- **🎓 Bloom's Taxonomy:** Questions mapped to cognitive levels (Remember → Create)
+- **📄 PDF Export:** Downloadable performance reports with missed questions
+- **♿ ADA Compliant:** High contrast, keyboard navigation, screen reader support
+- **🎨 Premium Design:** Custom design system with Fraunces + Outfit fonts
+
+## 🚀 Live Demo
+
+🔗 **Production:** [Coming soon - Vercel deployment in progress]
+
+## 🏗️ Tech Stack
+
+- **Framework:** Next.js 16 (App Router) + Turbopack
+- **Frontend:** React 19
+- **Styling:** Vanilla CSS with design tokens
+- **PDF Generation:** jsPDF
+- **Fonts:** Fraunces (serif) + Outfit (sans-serif)
+- **Deployment:** Vercel
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/station-exam-builder.git
+cd station-exam-builder
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🎓 Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Student Flow
 
-## Learn More
+1. **Registration:** Enter name, Lone Star College email, course, section, date
+2. **Mode Selection:**
+   - **Study Guide:** Navigate freely, get instant feedback and rationales
+   - **Exam Mode:** 105-minute timer, sequential navigation, no feedback until results
+3. **Complete Stations:** Answer 3-4 questions per station (28 stations total)
+4. **View Results:** Score breakdown, missed questions, Bloom's performance
+5. **Export PDF:** Download personalized report
 
-To learn more about Next.js, take a look at the following resources:
+### Email Validation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Only Lone Star College emails are accepted:
+- `@lonestar.edu`
+- `@my.lonestar.edu`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+station-exam-builder/
+├── app/
+│   ├── layout.js          # Root layout with fonts & metadata
+│   ├── page.js            # Landing page (student registration)
+│   ├── exam/
+│   │   └── page.js        # Station view + results screen
+│   └── globals.css        # Design system (900+ lines)
+├── lib/
+│   ├── examData.js        # Question bank & scoring logic
+│   └── pdfExport.js       # PDF report generation
+├── data/
+│   └── seed-biol2401.json # BIOL 2401 question bank (105 questions)
+├── public/
+│   └── stations/          # 28 station images (56MB total)
+└── package.json
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Design System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Colors
+
+- **Primary:** Deep navy (`#1e293b`) + Teal accent (`#0f766e`)
+- **Bloom's Taxonomy:**
+  - Remember: `#3b82f6` (blue)
+  - Understand: `#10b981` (green)
+  - Apply: `#f59e0b` (amber)
+  - Analyze: `#8b5cf6` (purple)
+  - Evaluate: `#ec4899` (pink)
+  - Create: `#ef4444` (red)
+
+### Typography
+
+- **Serif (Headings):** Fraunces (Variable 500-900)
+- **Sans-serif (Body):** Outfit (Variable 400-700)
+
+## 🔮 Roadmap
+
+### Phase 2 - Data Persistence (In Progress)
+- [ ] Supabase integration (PostgreSQL)
+- [ ] Student attempt logging
+- [ ] Admin dashboard for viewing results
+
+### Phase 3 - Instructor Tools
+- [ ] Question bank management
+- [ ] File upload (PDF/XLSX parsing)
+- [ ] Analytics & reports
+
+### Phase 4 - AI Image Generation
+- [ ] OpenRouter integration
+- [ ] Batch station image generation
+- [ ] ADA compliance validation
+
+### Phase 5 - BIOL 2402 Support
+- [ ] Add 26-station BIOL 2402 exam
+- [ ] Cross-course analytics
+- [ ] Performance optimization
+
+## 🤝 Contributing
+
+This is an educational project for Lone Star College. For major changes, please open an issue first.
+
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE) file for details
+
+## 👨‍⚕️ Author
+
+**Dr. Victor Garcia M**  
+Anatomy & Physiology Instructor  
+Lone Star College
+
+---
+
+Built with [Next.js](https://nextjs.org/) | Powered by [Vercel](https://vercel.com)
