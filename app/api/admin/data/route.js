@@ -139,5 +139,81 @@ export async function GET(request) {
     return NextResponse.json({ questions });
   }
 
+  // ── CHARTS ────────────────────────────────────────────────────────────────
+  if (type === 'charts') {
+    // 1. Score distribution from completed attempts
+    let attQ = supabase
+      .from('attempts')
+      .select('percent, mode, exam_id')
+      .not('completed_at', 'is', null);
+    if (filteredExamIds) {
+      if (!filteredExamIds.length) return NextResponse.json({ scoreDistribution: [], stationDifficulty: [], bloomBreakdown: [], modeSplit: [] });
+      attQ = attQ.in('exam_id', filteredExamIds);
+    }
+    const { data: attemptsData } = await attQ;
+
+    const buckets = Array.from({ length: 10 }, (_, i) => ({
+      label: i === 9 ? '90–100%' : `${i * 10}–${i * 10 + 9}%`,
+      count: 0,
+      passing: i >= 7,
+    }));
+    for (const a of attemptsData || []) {
+      if (a.percent == null) continue;
+      const idx = Math.min(Math.floor(a.percent / 10), 9);
+      buckets[idx].count++;
+    }
+
+    const studyCount = attemptsData?.filter(a => a.mode === 'study').length || 0;
+    const examCount = attemptsData?.filter(a => a.mode === 'exam').length || 0;
+
+    // 2. Per-station and per-bloom breakdowns from attempt_answers
+    const { data: answers } = await supabase
+      .from('attempt_answers')
+      .select(`
+        is_correct,
+        attempt:attempts!attempt_id(exam_id),
+        question:questions!question_id(bloom_level, station:stations!station_id(number, exercise))
+      `)
+      .limit(10000);
+
+    const stationMap = new Map();
+    const bloomMap = new Map();
+
+    for (const ans of answers || []) {
+      if (!ans.question) continue;
+      if (filteredExamIds && !filteredExamIds.includes(ans.attempt?.exam_id)) continue;
+
+      const course = examCourseMap[ans.attempt?.exam_id] || '—';
+      const stNum = ans.question.station?.number;
+      const ex = ans.question.station?.exercise;
+      const bloom = ans.question.bloom_level;
+
+      if (stNum != null) {
+        const key = `${course}-${stNum}`;
+        if (!stationMap.has(key)) stationMap.set(key, { station: stNum, exercise: ex, course_code: course, total: 0, correct: 0 });
+        const s = stationMap.get(key);
+        s.total++; if (ans.is_correct) s.correct++;
+      }
+
+      if (bloom) {
+        if (!bloomMap.has(bloom)) bloomMap.set(bloom, { bloom, total: 0, correct: 0 });
+        const b = bloomMap.get(bloom);
+        b.total++; if (ans.is_correct) b.correct++;
+      }
+    }
+
+    const stationDifficulty = Array.from(stationMap.values())
+      .map(s => ({ ...s, errorRate: s.total > 0 ? Math.round(((s.total - s.correct) / s.total) * 100) : 0 }))
+      .sort((a, b) => a.station - b.station);
+
+    const BLOOM_ORDER = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate'];
+    const bloomBreakdown = BLOOM_ORDER.map(b => {
+      const d = bloomMap.get(b) || { bloom: b, total: 0, correct: 0 };
+      return { ...d, errorRate: d.total > 0 ? Math.round(((d.total - d.correct) / d.total) * 100) : 0 };
+    });
+
+    return NextResponse.json({ scoreDistribution: buckets, stationDifficulty, bloomBreakdown, studyCount, examCount });
+  }
+
   return NextResponse.json({ error: 'Unknown type' }, { status: 400 });
 }
