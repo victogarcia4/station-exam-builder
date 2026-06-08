@@ -1,4 +1,5 @@
 import './globals.css';
+import ThemeProvider from '@/lib/ThemeProvider';
 
 export const metadata = {
   title: 'Station Exam Builder — A&P Lab Practical',
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="bg-pattern" aria-hidden="true" />
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
