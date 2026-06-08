@@ -1,0 +1,1682 @@
+[
+  {
+    "s": 1,
+    "q": 1,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify lymphatic organs",
+    "bloom": "Remember",
+    "question": "Identify the lymphoid organ in the left upper quadrant, posterior to the stomach. Which organ is it?",
+    "options": {
+      "A": "Thymus",
+      "B": "Palatine tonsil",
+      "C": "Spleen",
+      "D": "Cisterna chyli"
+    },
+    "answer": "C",
+    "stationImg": "Human torso model with the lymphatic system highlighted: spleen (LUQ, posterior to stomach), thymus, tonsils, and lymph nodes labeled A-D; include an ileum histology slide showing Peyer's patches and a lymph node micrograph (cortex / germinal centers / medulla)."
+  },
+  {
+    "s": 1,
+    "q": 2,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Trace lymph flow",
+    "bloom": "Understand",
+    "question": "Following the normal flow of lymph toward the venous circulation, which sequence is correct?",
+    "options": {
+      "A": "Subclavian vein → thoracic duct → lymphatic capillaries",
+      "B": "Lymphatic capillaries → thoracic duct → subclavian vein",
+      "C": "Lymphatic capillaries → subclavian vein → thoracic duct",
+      "D": "Thoracic duct → lymphatic capillaries → cisterna chyli"
+    },
+    "answer": "B",
+    "stationImg": "Human torso model with the lymphatic system highlighted: spleen (LUQ, posterior to stomach), thymus, tonsils, and lymph nodes labeled A-D; include an ileum histology slide showing Peyer's patches and a lymph node micrograph (cortex / germinal centers / medulla)."
+  },
+  {
+    "s": 1,
+    "q": 3,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify MALT",
+    "bloom": "Remember",
+    "question": "The aggregates of lymphoid tissue in the wall of the ileum are:",
+    "options": {
+      "A": "Peyer's patches",
+      "B": "Germinal centers of the spleen",
+      "C": "Lymph sinuses",
+      "D": "Medulla of the thymus"
+    },
+    "answer": "A",
+    "stationImg": "Human torso model with the lymphatic system highlighted: spleen (LUQ, posterior to stomach), thymus, tonsils, and lymph nodes labeled A-D; include an ileum histology slide showing Peyer's patches and a lymph node micrograph (cortex / germinal centers / medulla)."
+  },
+  {
+    "s": 1,
+    "q": 4,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Analyze histological structures",
+    "bloom": "Analyze",
+    "question": "In the lymph node micrograph, the region containing germinal centers with proliferating B lymphocytes is located in the:",
+    "options": {
+      "A": "Cortex",
+      "B": "Medulla",
+      "C": "Hilum",
+      "D": "Subcapsular sinus"
+    },
+    "answer": "A",
+    "stationImg": "Human torso model with the lymphatic system highlighted: spleen (LUQ, posterior to stomach), thymus, tonsils, and lymph nodes labeled A-D; include an ileum histology slide showing Peyer's patches and a lymph node micrograph (cortex / germinal centers / medulla)."
+  },
+  {
+    "s": 2,
+    "q": 5,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify lymph node structure",
+    "bloom": "Remember",
+    "question": "The vessel that penetrates the capsule on the convex surface and brings lymph into the node is the:",
+    "options": {
+      "A": "Efferent lymphatic vessel",
+      "B": "Subclavian vein",
+      "C": "Thoracic duct",
+      "D": "Afferent lymphatic vessel"
+    },
+    "answer": "D",
+    "stationImg": "Sectioned lymph node model with afferent vessels (A), capsule, cortex, medulla, hilum, and efferent vessel (B-F); alongside a neck/pharynx model showing the tonsillar ring: lingual (A), palatine (B), pharyngeal/adenoid (C)."
+  },
+  {
+    "s": 2,
+    "q": 6,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Understand lymphatic function",
+    "bloom": "Understand",
+    "question": "What is the primary function of the lymph node with respect to the lymph passing through it?",
+    "options": {
+      "A": "Produce red blood cells",
+      "B": "Store bile",
+      "C": "Filter the lymph and mount immune responses",
+      "D": "Secrete surfactant"
+    },
+    "answer": "C",
+    "stationImg": "Sectioned lymph node model with afferent vessels (A), capsule, cortex, medulla, hilum, and efferent vessel (B-F); alongside a neck/pharynx model showing the tonsillar ring: lingual (A), palatine (B), pharyngeal/adenoid (C)."
+  },
+  {
+    "s": 2,
+    "q": 7,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Apply lymphatic concepts",
+    "bloom": "Apply",
+    "question": "An infection in the right hand will first drain to the lymph nodes of which region, based on the listed locations?",
+    "options": {
+      "A": "Supratrochlear and axillary",
+      "B": "Popliteal",
+      "C": "Pelvic",
+      "D": "Thoracic"
+    },
+    "answer": "A",
+    "stationImg": "Sectioned lymph node model with afferent vessels (A), capsule, cortex, medulla, hilum, and efferent vessel (B-F); alongside a neck/pharynx model showing the tonsillar ring: lingual (A), palatine (B), pharyngeal/adenoid (C)."
+  },
+  {
+    "s": 2,
+    "q": 8,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify lymphatic organs",
+    "bloom": "Remember",
+    "question": "The tonsil located on the posterior wall of the nasopharynx is the:",
+    "options": {
+      "A": "Palatine tonsil",
+      "B": "Lingual tonsil",
+      "C": "Pharyngeal tonsil (adenoid)",
+      "D": "Peyer's patch"
+    },
+    "answer": "C",
+    "stationImg": "Sectioned lymph node model with afferent vessels (A), capsule, cortex, medulla, hilum, and efferent vessel (B-F); alongside a neck/pharynx model showing the tonsillar ring: lingual (A), palatine (B), pharyngeal/adenoid (C)."
+  },
+  {
+    "s": 3,
+    "q": 9,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify spleen structure",
+    "bloom": "Remember",
+    "question": "The cleft where the vessels of the spleen enter and exit is the:",
+    "options": {
+      "A": "Germinal center",
+      "B": "Lymph sinus",
+      "C": "Hilum",
+      "D": "Trigone"
+    },
+    "answer": "C",
+    "stationImg": "Sectioned spleen with hilum (A), capsule, and pulp; alongside a schematic of the pharyngeal tonsillar ring and a thoracic model showing the thoracic duct and cisterna chyli (A)."
+  },
+  {
+    "s": 3,
+    "q": 10,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Understand tonsil function",
+    "bloom": "Understand",
+    "question": "Why is the location of the tonsils at the entrance to the pharynx functionally advantageous?",
+    "options": {
+      "A": "They filter arterial blood",
+      "B": "They produce alveolar surfactant",
+      "C": "They regulate tidal volume",
+      "D": "They monitor pathogens entering through the mouth and nose"
+    },
+    "answer": "D",
+    "stationImg": "Sectioned spleen with hilum (A), capsule, and pulp; alongside a schematic of the pharyngeal tonsillar ring and a thoracic model showing the thoracic duct and cisterna chyli (A)."
+  },
+  {
+    "s": 3,
+    "q": 11,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Apply physiological concepts",
+    "bloom": "Apply",
+    "question": "If the lymphatic capillaries of a limb become blocked, the most likely clinical result is:",
+    "options": {
+      "A": "Increased residual lung volume",
+      "B": "Gastric alkalosis",
+      "C": "Hematuria",
+      "D": "Edema from accumulation of interstitial fluid"
+    },
+    "answer": "D",
+    "stationImg": "Sectioned spleen with hilum (A), capsule, and pulp; alongside a schematic of the pharyngeal tonsillar ring and a thoracic model showing the thoracic duct and cisterna chyli (A)."
+  },
+  {
+    "s": 3,
+    "q": 12,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify lymph flow",
+    "bloom": "Remember",
+    "question": "The saccular dilation at the origin of the thoracic duct is the:",
+    "options": {
+      "A": "Right subclavian vein",
+      "B": "Node capsule",
+      "C": "Splenic medulla",
+      "D": "Cisterna chyli"
+    },
+    "answer": "D",
+    "stationImg": "Sectioned spleen with hilum (A), capsule, and pulp; alongside a schematic of the pharyngeal tonsillar ring and a thoracic model showing the thoracic duct and cisterna chyli (A)."
+  },
+  {
+    "s": 4,
+    "q": 13,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Evaluate lymphatic anatomy",
+    "bloom": "Evaluate",
+    "question": "A surgeon evaluates the lymphatic drainage of the right upper quadrant of the body. Which statement is correct?",
+    "options": {
+      "A": "It drains via the right lymphatic duct into the right subclavian vein",
+      "B": "It drains via the thoracic duct into the left subclavian vein",
+      "C": "It drains directly into the cisterna chyli",
+      "D": "It has no lymphatic drainage"
+    },
+    "answer": "A",
+    "stationImg": "Body lymphatic drainage diagram (thoracic duct vs. right lymphatic duct draining to subclavian veins) with an oral cavity view showing palatine tonsils (A) and a lymph node micrograph with active germinal centers (A)."
+  },
+  {
+    "s": 4,
+    "q": 14,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify tonsils",
+    "bloom": "Remember",
+    "question": "The tonsils located on each side of the oropharynx between the pillars are the:",
+    "options": {
+      "A": "Pharyngeal tonsils",
+      "B": "Palatine tonsils",
+      "C": "Lingual tonsils",
+      "D": "Peyer's patches"
+    },
+    "answer": "B",
+    "stationImg": "Body lymphatic drainage diagram (thoracic duct vs. right lymphatic duct draining to subclavian veins) with an oral cavity view showing palatine tonsils (A) and a lymph node micrograph with active germinal centers (A)."
+  },
+  {
+    "s": 4,
+    "q": 15,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Trace lymph flow",
+    "bloom": "Understand",
+    "question": "Within the lymph node, lymph flows in the following order:",
+    "options": {
+      "A": "Efferent vessel → medulla → afferent vessel",
+      "B": "Hilum → capsule → cortex → exterior",
+      "C": "Afferent vessel → lymph sinuses → efferent vessel (via the hilum)",
+      "D": "Subclavian vein → cortex → medulla"
+    },
+    "answer": "C",
+    "stationImg": "Body lymphatic drainage diagram (thoracic duct vs. right lymphatic duct draining to subclavian veins) with an oral cavity view showing palatine tonsils (A) and a lymph node micrograph with active germinal centers (A)."
+  },
+  {
+    "s": 4,
+    "q": 16,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Analyze immune response",
+    "bloom": "Analyze",
+    "question": "The expansion of the germinal centers in a lymph node mainly indicates:",
+    "options": {
+      "A": "Necrosis of the lymphoid tissue",
+      "B": "Accumulation of surfactant",
+      "C": "Proliferation of B lymphocytes in response to antigen",
+      "D": "Formation of renal calculi"
+    },
+    "answer": "C",
+    "stationImg": "Body lymphatic drainage diagram (thoracic duct vs. right lymphatic duct draining to subclavian veins) with an oral cavity view showing palatine tonsils (A) and a lymph node micrograph with active germinal centers (A)."
+  },
+  {
+    "s": 5,
+    "q": 17,
+    "ex": "Ex 8: Lymphatic System",
+    "lo": "Identify histological structures",
+    "bloom": "Remember",
+    "question": "The supporting framework of the lymph node that holds the cells is made of:",
+    "options": {
+      "A": "Hyaline cartilage",
+      "B": "Reticular connective tissue",
+      "C": "Transitional epithelium",
+      "D": "Detrusor muscle"
+    },
+    "answer": "B",
+    "stationImg": "Lymph node stroma micrograph (reticular tissue) alongside a sagittal head/neck section with the upper airway labeled: nasal cavity (A), pharynx (B), larynx (C), trachea (D); plus an anterior larynx model with thyroid (A), cricoid (B), and epiglottis (C) cartilages."
+  },
+  {
+    "s": 5,
+    "q": 18,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify respiratory organs",
+    "bloom": "Remember",
+    "question": "The tubular structure inferior to the larynx and reinforced by cartilaginous rings is the:",
+    "options": {
+      "A": "Esophagus",
+      "B": "Pharynx",
+      "C": "Trachea",
+      "D": "Primary bronchus"
+    },
+    "answer": "C",
+    "stationImg": "Lymph node stroma micrograph (reticular tissue) alongside a sagittal head/neck section with the upper airway labeled: nasal cavity (A), pharynx (B), larynx (C), trachea (D); plus an anterior larynx model with thyroid (A), cricoid (B), and epiglottis (C) cartilages."
+  },
+  {
+    "s": 5,
+    "q": 19,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Understand structural function",
+    "bloom": "Understand",
+    "question": "What is the function of the nasal conchae in the nasal cavity?",
+    "options": {
+      "A": "Produce surfactant",
+      "B": "Increase turbulence to warm, humidify, and filter the air",
+      "C": "Perform gas exchange",
+      "D": "Vibrate to produce the voice"
+    },
+    "answer": "B",
+    "stationImg": "Lymph node stroma micrograph (reticular tissue) alongside a sagittal head/neck section with the upper airway labeled: nasal cavity (A), pharynx (B), larynx (C), trachea (D); plus an anterior larynx model with thyroid (A), cricoid (B), and epiglottis (C) cartilages."
+  },
+  {
+    "s": 5,
+    "q": 20,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify laryngeal structures",
+    "bloom": "Remember",
+    "question": "The largest laryngeal cartilage, forming the laryngeal prominence ('Adam's apple'), is the:",
+    "options": {
+      "A": "Cricoid cartilage",
+      "B": "Thyroid cartilage",
+      "C": "Arytenoid cartilage",
+      "D": "Epiglottis"
+    },
+    "answer": "B",
+    "stationImg": "Lymph node stroma micrograph (reticular tissue) alongside a sagittal head/neck section with the upper airway labeled: nasal cavity (A), pharynx (B), larynx (C), trachea (D); plus an anterior larynx model with thyroid (A), cricoid (B), and epiglottis (C) cartilages."
+  },
+  {
+    "s": 6,
+    "q": 21,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify vocal cords",
+    "bloom": "Remember",
+    "question": "The lower folds responsible for phonation are the:",
+    "options": {
+      "A": "False vocal cords",
+      "B": "Corniculate cartilages",
+      "C": "True vocal cords",
+      "D": "Epiglottic folds"
+    },
+    "answer": "C",
+    "stationImg": "Laryngoscopic view of the glottis: true vocal cords (A) and false vocal cords (B); a lungs-in-situ model with a 3-lobed right lung (A) and 2-lobed left lung (B); and a respiratory tree schematic showing the primary bronchi."
+  },
+  {
+    "s": 6,
+    "q": 22,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Analyze structural relationships",
+    "bloom": "Analyze",
+    "question": "During swallowing, which structural relationship prevents food from entering the airway?",
+    "options": {
+      "A": "The conchae close",
+      "B": "The diaphragm contracts",
+      "C": "The epiglottis covers the glottis",
+      "D": "The vomer elevates"
+    },
+    "answer": "C",
+    "stationImg": "Laryngoscopic view of the glottis: true vocal cords (A) and false vocal cords (B); a lungs-in-situ model with a 3-lobed right lung (A) and 2-lobed left lung (B); and a respiratory tree schematic showing the primary bronchi."
+  },
+  {
+    "s": 6,
+    "q": 23,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify lung lobes",
+    "bloom": "Remember",
+    "question": "The lung that has three lobes is the:",
+    "options": {
+      "A": "Left lung",
+      "B": "Isolated middle lobe",
+      "C": "Right lung",
+      "D": "Lingula"
+    },
+    "answer": "C",
+    "stationImg": "Laryngoscopic view of the glottis: true vocal cords (A) and false vocal cords (B); a lungs-in-situ model with a 3-lobed right lung (A) and 2-lobed left lung (B); and a respiratory tree schematic showing the primary bronchi."
+  },
+  {
+    "s": 6,
+    "q": 24,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Apply anatomical knowledge",
+    "bloom": "Apply",
+    "question": "An aspirated object tends to lodge more often in the right primary bronchus because it is:",
+    "options": {
+      "A": "Wider, shorter, and more vertical than the left",
+      "B": "Narrower and more horizontal",
+      "C": "The only one in the body",
+      "D": "Part of the thoracic duct"
+    },
+    "answer": "A",
+    "stationImg": "Laryngoscopic view of the glottis: true vocal cords (A) and false vocal cords (B); a lungs-in-situ model with a 3-lobed right lung (A) and 2-lobed left lung (B); and a respiratory tree schematic showing the primary bronchi."
+  },
+  {
+    "s": 7,
+    "q": 25,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify respiratory muscles",
+    "bloom": "Remember",
+    "question": "The dome-shaped muscle that is the main muscle of inspiration is the:",
+    "options": {
+      "A": "Rectus abdominis",
+      "B": "Internal intercostals",
+      "C": "Diaphragm",
+      "D": "Sternocleidomastoid"
+    },
+    "answer": "C",
+    "stationImg": "Trunk model with respiratory muscles (dome-shaped diaphragm A, intercostals) and a thoracic cross-section showing parietal pleura, visceral pleura, and pleural cavity; plus a tracheal wall micrograph (ciliated pseudostratified columnar epithelium)."
+  },
+  {
+    "s": 7,
+    "q": 26,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Understand pleura",
+    "bloom": "Understand",
+    "question": "What is the function of the fluid in the pleural cavity between the parietal and visceral pleurae?",
+    "options": {
+      "A": "Reduce friction and couple the lung to the chest wall",
+      "B": "Perform gas exchange",
+      "C": "Produce mucus",
+      "D": "Filter lymph"
+    },
+    "answer": "A",
+    "stationImg": "Trunk model with respiratory muscles (dome-shaped diaphragm A, intercostals) and a thoracic cross-section showing parietal pleura, visceral pleura, and pleural cavity; plus a tracheal wall micrograph (ciliated pseudostratified columnar epithelium)."
+  },
+  {
+    "s": 7,
+    "q": 27,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify histological tissue",
+    "bloom": "Remember",
+    "question": "The epithelium lining the trachea, with cilia and goblet cells, is:",
+    "options": {
+      "A": "Pseudostratified ciliated columnar epithelium",
+      "B": "Simple squamous epithelium",
+      "C": "Transitional epithelium",
+      "D": "Stratified cuboidal epithelium"
+    },
+    "answer": "A",
+    "stationImg": "Trunk model with respiratory muscles (dome-shaped diaphragm A, intercostals) and a thoracic cross-section showing parietal pleura, visceral pleura, and pleural cavity; plus a tracheal wall micrograph (ciliated pseudostratified columnar epithelium)."
+  },
+  {
+    "s": 7,
+    "q": 28,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Evaluate respiratory tree",
+    "bloom": "Evaluate",
+    "question": "When evaluating the sequence of the respiratory tree, which order is correct from the trachea distally?",
+    "options": {
+      "A": "Alveoli → terminal bronchiole → primary bronchus → trachea",
+      "B": "Tertiary bronchus → primary → secondary → alveoli",
+      "C": "Primary bronchus → secondary → tertiary → terminal bronchiole → respiratory bronchiole → alveolar duct → alveoli",
+      "D": "Trachea → alveoli → bronchi → bronchioles"
+    },
+    "answer": "C",
+    "stationImg": "Trunk model with respiratory muscles (dome-shaped diaphragm A, intercostals) and a thoracic cross-section showing parietal pleura, visceral pleura, and pleural cavity; plus a tracheal wall micrograph (ciliated pseudostratified columnar epithelium)."
+  },
+  {
+    "s": 8,
+    "q": 29,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify alveolar structures",
+    "bloom": "Remember",
+    "question": "The thin-walled chambers that are the site of gas exchange are the:",
+    "options": {
+      "A": "Terminal bronchioles",
+      "B": "Alveoli",
+      "C": "Paranasal sinuses",
+      "D": "Renal calyces"
+    },
+    "answer": "B",
+    "stationImg": "Lung parenchyma micrograph with alveolar sacs and alveoli (A); a skull with transilluminated paranasal sinuses - maxillary (A), frontal, ethmoid, sphenoid; a schematic of the thorax during inspiration (diaphragm descended); and a frontal section showing the mediastinum."
+  },
+  {
+    "s": 8,
+    "q": 30,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify paranasal sinuses",
+    "bloom": "Remember",
+    "question": "The largest paranasal sinus, located in the maxillary bone below the orbit, is the:",
+    "options": {
+      "A": "Frontal sinus",
+      "B": "Sphenoid sinus",
+      "C": "Ethmoid sinus",
+      "D": "Maxillary sinus"
+    },
+    "answer": "D",
+    "stationImg": "Lung parenchyma micrograph with alveolar sacs and alveoli (A); a skull with transilluminated paranasal sinuses - maxillary (A), frontal, ethmoid, sphenoid; a schematic of the thorax during inspiration (diaphragm descended); and a frontal section showing the mediastinum."
+  },
+  {
+    "s": 8,
+    "q": 31,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Apply mechanism of breathing",
+    "bloom": "Apply",
+    "question": "During quiet inspiration, contraction of the diaphragm produces:",
+    "options": {
+      "A": "Decreased thoracic volume",
+      "B": "Increased thoracic volume and decreased intrapulmonary pressure",
+      "C": "Increased intrapulmonary pressure",
+      "D": "Alveolar collapse"
+    },
+    "answer": "B",
+    "stationImg": "Lung parenchyma micrograph with alveolar sacs and alveoli (A); a skull with transilluminated paranasal sinuses - maxillary (A), frontal, ethmoid, sphenoid; a schematic of the thorax during inspiration (diaphragm descended); and a frontal section showing the mediastinum."
+  },
+  {
+    "s": 8,
+    "q": 32,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Understand lung location",
+    "bloom": "Understand",
+    "question": "Which structure occupies the central space between the two lungs?",
+    "options": {
+      "A": "The pleural cavity",
+      "B": "The mediastinum",
+      "C": "The renal hilum",
+      "D": "The cisterna chyli"
+    },
+    "answer": "B",
+    "stationImg": "Lung parenchyma micrograph with alveolar sacs and alveoli (A); a skull with transilluminated paranasal sinuses - maxillary (A), frontal, ethmoid, sphenoid; a schematic of the thorax during inspiration (diaphragm descended); and a frontal section showing the mediastinum."
+  },
+  {
+    "s": 9,
+    "q": 33,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify epiglottis function",
+    "bloom": "Remember",
+    "question": "The leaf-shaped cartilaginous structure that protects the airway during swallowing is the:",
+    "options": {
+      "A": "Cricoid cartilage",
+      "B": "Arytenoid cartilage",
+      "C": "Epiglottis",
+      "D": "Vomer"
+    },
+    "answer": "C",
+    "stationImg": "Sagittal section of larynx/pharynx: epiglottis (A) and pharyngeal divisions - nasopharynx (A), oropharynx (B), laryngopharynx (C); an alveolar septum micrograph (simple squamous epithelium); and a schematic spirogram of ventilation."
+  },
+  {
+    "s": 9,
+    "q": 34,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Analyze pharynx divisions",
+    "bloom": "Analyze",
+    "question": "The pharyngeal division that is continuous with the esophagus and the larynx is the:",
+    "options": {
+      "A": "Nasopharynx",
+      "B": "Oropharynx",
+      "C": "Glottis",
+      "D": "Laryngopharynx"
+    },
+    "answer": "D",
+    "stationImg": "Sagittal section of larynx/pharynx: epiglottis (A) and pharyngeal divisions - nasopharynx (A), oropharynx (B), laryngopharynx (C); an alveolar septum micrograph (simple squamous epithelium); and a schematic spirogram of ventilation."
+  },
+  {
+    "s": 9,
+    "q": 35,
+    "ex": "Ex 9: Respiratory System",
+    "lo": "Identify specific histology",
+    "bloom": "Remember",
+    "question": "The epithelium of the alveolar wall, adapted for gas exchange, is:",
+    "options": {
+      "A": "Pseudostratified columnar epithelium",
+      "B": "Simple squamous epithelium",
+      "C": "Transitional epithelium",
+      "D": "Simple cuboidal epithelium"
+    },
+    "answer": "B",
+    "stationImg": "Sagittal section of larynx/pharynx: epiglottis (A) and pharyngeal divisions - nasopharynx (A), oropharynx (B), laryngopharynx (C); an alveolar septum micrograph (simple squamous epithelium); and a schematic spirogram of ventilation."
+  },
+  {
+    "s": 9,
+    "q": 36,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define ventilation",
+    "bloom": "Remember",
+    "question": "The process of moving air into and out of the lungs is called:",
+    "options": {
+      "A": "Alveolar diffusion",
+      "B": "Glomerular filtration",
+      "C": "Pulmonary ventilation",
+      "D": "Phonation"
+    },
+    "answer": "C",
+    "stationImg": "Sagittal section of larynx/pharynx: epiglottis (A) and pharyngeal divisions - nasopharynx (A), oropharynx (B), laryngopharynx (C); an alveolar septum micrograph (simple squamous epithelium); and a schematic spirogram of ventilation."
+  },
+  {
+    "s": 10,
+    "q": 37,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define tidal volume",
+    "bloom": "Remember",
+    "question": "The volume of air moved in a normal quiet breath is the:",
+    "options": {
+      "A": "Residual volume (RV)",
+      "B": "Tidal volume (TV)",
+      "C": "Vital capacity (VC)",
+      "D": "Inspiratory reserve volume (IRV)"
+    },
+    "answer": "B",
+    "stationImg": "Labeled spirogram showing TV, IRV, ERV, and RV with reference values; alongside a pressure-volume diagram of ventilatory mechanics (Boyle's law)."
+  },
+  {
+    "s": 10,
+    "q": 38,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Calculate capacities",
+    "bloom": "Apply",
+    "question": "If TV = 500 mL, IRV = 3000 mL, and ERV = 1100 mL, what is the Vital Capacity (VC = TV + IRV + ERV)?",
+    "options": {
+      "A": "3500 mL",
+      "B": "4600 mL",
+      "C": "5800 mL",
+      "D": "1600 mL"
+    },
+    "answer": "B",
+    "stationImg": "Labeled spirogram showing TV, IRV, ERV, and RV with reference values; alongside a pressure-volume diagram of ventilatory mechanics (Boyle's law)."
+  },
+  {
+    "s": 10,
+    "q": 39,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Understand physical changes",
+    "bloom": "Understand",
+    "question": "According to Boyle's law applied to ventilation, when lung volume increases, intrapulmonary pressure:",
+    "options": {
+      "A": "Increases, expelling air",
+      "B": "Decreases, allowing air to enter",
+      "C": "Does not change",
+      "D": "Becomes zero"
+    },
+    "answer": "B",
+    "stationImg": "Labeled spirogram showing TV, IRV, ERV, and RV with reference values; alongside a pressure-volume diagram of ventilatory mechanics (Boyle's law)."
+  },
+  {
+    "s": 10,
+    "q": 40,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define residual volume",
+    "bloom": "Remember",
+    "question": "The volume of air remaining in the lungs after a maximal exhalation is the:",
+    "options": {
+      "A": "Tidal volume (TV)",
+      "B": "Expiratory reserve volume (ERV)",
+      "C": "Vital capacity (VC)",
+      "D": "Residual volume (RV)"
+    },
+    "answer": "D",
+    "stationImg": "Labeled spirogram showing TV, IRV, ERV, and RV with reference values; alongside a pressure-volume diagram of ventilatory mechanics (Boyle's law)."
+  },
+  {
+    "s": 11,
+    "q": 41,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Calculate MRV",
+    "bloom": "Apply",
+    "question": "If TV = 500 mL and the rate is 12 breaths/min, the Minute Respiratory Volume (MRV = TV × breaths/min) is:",
+    "options": {
+      "A": "500 mL/min",
+      "B": "512 mL/min",
+      "C": "6000 mL/min",
+      "D": "60000 mL/min"
+    },
+    "answer": "C",
+    "stationImg": "Comparative spirogram (normal vs. restrictive pattern) with TV, IRV, ERV, RV, VC, and TLC labeled and traces A-D for identifying capacities."
+  },
+  {
+    "s": 11,
+    "q": 42,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Evaluate restrictive disorders",
+    "bloom": "Evaluate",
+    "question": "In a restrictive pulmonary disorder (e.g., fibrosis), which spirometric finding is expected?",
+    "options": {
+      "A": "Increased residual volume with no change in VC",
+      "B": "Increased vital capacity",
+      "C": "Zero MRV",
+      "D": "Reduced vital capacity and total lung capacity"
+    },
+    "answer": "D",
+    "stationImg": "Comparative spirogram (normal vs. restrictive pattern) with TV, IRV, ERV, RV, VC, and TLC labeled and traces A-D for identifying capacities."
+  },
+  {
+    "s": 11,
+    "q": 43,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define Total Lung Capacity",
+    "bloom": "Remember",
+    "question": "Total Lung Capacity (TLC) is defined as:",
+    "options": {
+      "A": "VC + RV",
+      "B": "TV + IRV",
+      "C": "IRV + ERV",
+      "D": "TV × breaths/min"
+    },
+    "answer": "A",
+    "stationImg": "Comparative spirogram (normal vs. restrictive pattern) with TV, IRV, ERV, RV, VC, and TLC labeled and traces A-D for identifying capacities."
+  },
+  {
+    "s": 11,
+    "q": 44,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Identify spirogram traces",
+    "bloom": "Understand",
+    "question": "On the spirogram, the trace going from maximal exhalation to maximal inhalation represents:",
+    "options": {
+      "A": "The residual volume (RV)",
+      "B": "The vital capacity (VC)",
+      "C": "The tidal volume (TV)",
+      "D": "The MRV"
+    },
+    "answer": "B",
+    "stationImg": "Comparative spirogram (normal vs. restrictive pattern) with TV, IRV, ERV, RV, VC, and TLC labeled and traces A-D for identifying capacities."
+  },
+  {
+    "s": 12,
+    "q": 45,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Analyze pressure changes",
+    "bloom": "Analyze",
+    "question": "Analyzing the curves, during inspiration the intrapulmonary pressure relative to atmospheric becomes:",
+    "options": {
+      "A": "Negative (subatmospheric)",
+      "B": "Positive (supra-atmospheric)",
+      "C": "Equal to the intrapleural pressure",
+      "D": "Constant"
+    },
+    "answer": "A",
+    "stationImg": "Intrapulmonary and intrapleural pressure curves over a respiratory cycle; a spirogram with ERV marked; and an image of a spirometer connected to a subject."
+  },
+  {
+    "s": 12,
+    "q": 46,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define ERV",
+    "bloom": "Remember",
+    "question": "The additional volume that can be forcibly exhaled after a quiet exhalation is the:",
+    "options": {
+      "A": "Inspiratory reserve volume (IRV)",
+      "B": "Expiratory reserve volume (ERV)",
+      "C": "Residual volume (RV)",
+      "D": "Tidal volume (TV)"
+    },
+    "answer": "B",
+    "stationImg": "Intrapulmonary and intrapleural pressure curves over a respiratory cycle; a spirogram with ERV marked; and an image of a spirometer connected to a subject."
+  },
+  {
+    "s": 12,
+    "q": 47,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Understand spirometry",
+    "bloom": "Understand",
+    "question": "What does a spirometer directly measure?",
+    "options": {
+      "A": "Blood pressure",
+      "B": "Volumes and capacities of ventilated air",
+      "C": "Urine pH",
+      "D": "Glomerular filtration"
+    },
+    "answer": "B",
+    "stationImg": "Intrapulmonary and intrapleural pressure curves over a respiratory cycle; a spirogram with ERV marked; and an image of a spirometer connected to a subject."
+  },
+  {
+    "s": 12,
+    "q": 48,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Apply capacities",
+    "bloom": "Apply",
+    "question": "With TV=500, IRV=3100, ERV=1200, and RV=1200 mL, the Total Lung Capacity (TLC = VC + RV) is:",
+    "options": {
+      "A": "6000 mL",
+      "B": "4800 mL",
+      "C": "3600 mL",
+      "D": "1700 mL"
+    },
+    "answer": "A",
+    "stationImg": "Intrapulmonary and intrapleural pressure curves over a respiratory cycle; a spirogram with ERV marked; and an image of a spirometer connected to a subject."
+  },
+  {
+    "s": 13,
+    "q": 49,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Evaluate obstructive disease",
+    "bloom": "Evaluate",
+    "question": "In obstructive pulmonary disease, which change is characteristic?",
+    "options": {
+      "A": "Decreased residual volume",
+      "B": "Increased vital capacity",
+      "C": "Absence of tidal volume",
+      "D": "Increased residual volume due to air trapping"
+    },
+    "answer": "D",
+    "stationImg": "Comparative obstructive spirogram (air trapping) vs. normal, with IRV marked and a table of reference respiratory values (TV 500, IRV 3100, ERV 1200, RV 1200, VC, TLC)."
+  },
+  {
+    "s": 13,
+    "q": 50,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Define IRV",
+    "bloom": "Remember",
+    "question": "The additional volume that can be forcibly inhaled after a quiet inhalation is the:",
+    "options": {
+      "A": "Inspiratory reserve volume (IRV)",
+      "B": "Expiratory reserve volume (ERV)",
+      "C": "Residual volume (RV)",
+      "D": "Vital capacity (VC)"
+    },
+    "answer": "A",
+    "stationImg": "Comparative obstructive spirogram (air trapping) vs. normal, with IRV marked and a table of reference respiratory values (TV 500, IRV 3100, ERV 1200, RV 1200, VC, TLC)."
+  },
+  {
+    "s": 13,
+    "q": 51,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Calculate TLC",
+    "bloom": "Apply",
+    "question": "If VC = 4600 mL and RV = 1200 mL, the Total Lung Capacity is:",
+    "options": {
+      "A": "5800 mL",
+      "B": "3400 mL",
+      "C": "4600 mL",
+      "D": "1200 mL"
+    },
+    "answer": "A",
+    "stationImg": "Comparative obstructive spirogram (air trapping) vs. normal, with IRV marked and a table of reference respiratory values (TV 500, IRV 3100, ERV 1200, RV 1200, VC, TLC)."
+  },
+  {
+    "s": 13,
+    "q": 52,
+    "ex": "Ex 10: Respiratory Volumes",
+    "lo": "Identify normal values",
+    "bloom": "Remember",
+    "question": "What is the approximate normal reference value of resting tidal volume in an adult?",
+    "options": {
+      "A": "500 mL",
+      "B": "3100 mL",
+      "C": "1200 mL",
+      "D": "4600 mL"
+    },
+    "answer": "A",
+    "stationImg": "Comparative obstructive spirogram (air trapping) vs. normal, with IRV marked and a table of reference respiratory values (TV 500, IRV 3100, ERV 1200, RV 1200, VC, TLC)."
+  },
+  {
+    "s": 14,
+    "q": 53,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify urinary organs",
+    "bloom": "Remember",
+    "question": "The duct that transports urine from the kidney to the bladder is the:",
+    "options": {
+      "A": "Urethra",
+      "B": "Ureter",
+      "C": "Collecting duct",
+      "D": "Thoracic duct"
+    },
+    "answer": "B",
+    "stationImg": "Urinary system model with kidneys, ureters (B), bladder, and urethra (A-D); a frontal kidney section - cortex (A), medulla, pyramids, columns, renal pelvis; and a nephron diagram with the loop of Henle (descending limb A, ascending limb B)."
+  },
+  {
+    "s": 14,
+    "q": 54,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify kidney structure",
+    "bloom": "Remember",
+    "question": "The outer region of the kidney, where the renal corpuscles are located, is the:",
+    "options": {
+      "A": "Renal medulla",
+      "B": "Renal pelvis",
+      "C": "Renal hilum",
+      "D": "Renal cortex"
+    },
+    "answer": "D",
+    "stationImg": "Urinary system model with kidneys, ureters (B), bladder, and urethra (A-D); a frontal kidney section - cortex (A), medulla, pyramids, columns, renal pelvis; and a nephron diagram with the loop of Henle (descending limb A, ascending limb B)."
+  },
+  {
+    "s": 14,
+    "q": 55,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Trace urine flow",
+    "bloom": "Understand",
+    "question": "Which is the correct sequence of urine flow formed in the kidney?",
+    "options": {
+      "A": "Ureter → renal pelvis → major calyx → bladder",
+      "B": "Minor calyx → major calyx → renal pelvis → ureter → bladder → urethra",
+      "C": "Renal pelvis → minor calyx → urethra → bladder",
+      "D": "Bladder → ureter → renal pelvis → urethra"
+    },
+    "answer": "B",
+    "stationImg": "Urinary system model with kidneys, ureters (B), bladder, and urethra (A-D); a frontal kidney section - cortex (A), medulla, pyramids, columns, renal pelvis; and a nephron diagram with the loop of Henle (descending limb A, ascending limb B)."
+  },
+  {
+    "s": 14,
+    "q": 56,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Analyze nephron loops",
+    "bloom": "Analyze",
+    "question": "The descending limb of the loop of Henle is highly permeable to:",
+    "options": {
+      "A": "Water",
+      "B": "Sodium only",
+      "C": "Plasma proteins",
+      "D": "Red blood cells"
+    },
+    "answer": "A",
+    "stationImg": "Urinary system model with kidneys, ureters (B), bladder, and urethra (A-D); a frontal kidney section - cortex (A), medulla, pyramids, columns, renal pelvis; and a nephron diagram with the loop of Henle (descending limb A, ascending limb B)."
+  },
+  {
+    "s": 15,
+    "q": 57,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify nephron parts",
+    "bloom": "Remember",
+    "question": "The segment that leaves the renal corpuscle and is the first convoluted tubule is the:",
+    "options": {
+      "A": "Distal convoluted tubule (DCT)",
+      "B": "Proximal convoluted tubule (PCT)",
+      "C": "Collecting duct",
+      "D": "Loop of Henle"
+    },
+    "answer": "B",
+    "stationImg": "Fully labeled nephron: renal corpuscle, PCT (B), loop of Henle, DCT, collecting duct (A-E); a bladder wall micrograph (transitional epithelium); a renal blood supply diagram up to the afferent arteriole (A); and a sectioned male urethra - prostatic (A), membranous, penile."
+  },
+  {
+    "s": 15,
+    "q": 58,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Understand bladder histology",
+    "bloom": "Understand",
+    "question": "Why is transitional epithelium functionally appropriate for the bladder?",
+    "options": {
+      "A": "It allows distension and recovery as it fills and empties",
+      "B": "It performs gas exchange",
+      "C": "It secretes surfactant",
+      "D": "It filters blood"
+    },
+    "answer": "A",
+    "stationImg": "Fully labeled nephron: renal corpuscle, PCT (B), loop of Henle, DCT, collecting duct (A-E); a bladder wall micrograph (transitional epithelium); a renal blood supply diagram up to the afferent arteriole (A); and a sectioned male urethra - prostatic (A), membranous, penile."
+  },
+  {
+    "s": 15,
+    "q": 59,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Apply vascular flow",
+    "bloom": "Apply",
+    "question": "Following renal blood flow, which vessel carries blood directly toward the glomerulus?",
+    "options": {
+      "A": "Efferent arteriole",
+      "B": "Afferent arteriole",
+      "C": "Arcuate vein",
+      "D": "Vasa recta"
+    },
+    "answer": "B",
+    "stationImg": "Fully labeled nephron: renal corpuscle, PCT (B), loop of Henle, DCT, collecting duct (A-E); a bladder wall micrograph (transitional epithelium); a renal blood supply diagram up to the afferent arteriole (A); and a sectioned male urethra - prostatic (A), membranous, penile."
+  },
+  {
+    "s": 15,
+    "q": 60,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify urethra regions",
+    "bloom": "Remember",
+    "question": "The portion of the urethra that passes through the prostate is the:",
+    "options": {
+      "A": "Membranous urethra",
+      "B": "Penile urethra",
+      "C": "Prostatic urethra",
+      "D": "Cortical urethra"
+    },
+    "answer": "C",
+    "stationImg": "Fully labeled nephron: renal corpuscle, PCT (B), loop of Henle, DCT, collecting duct (A-E); a bladder wall micrograph (transitional epithelium); a renal blood supply diagram up to the afferent arteriole (A); and a sectioned male urethra - prostatic (A), membranous, penile."
+  },
+  {
+    "s": 16,
+    "q": 61,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Evaluate JGA function",
+    "bloom": "Evaluate",
+    "question": "When evaluating the juxtaglomerular apparatus, what is its primary function?",
+    "options": {
+      "A": "Produce surfactant",
+      "B": "Store urine",
+      "C": "Perform gas exchange",
+      "D": "Regulate blood pressure and the glomerular filtration rate"
+    },
+    "answer": "D",
+    "stationImg": "Juxtaglomerular apparatus diagram (macula densa, juxtaglomerular cells); a medial kidney view with the hilum (A); a PCT reabsorption schematic; and a renal cortex micrograph with renal corpuscles (glomerulus + Bowman's capsule)."
+  },
+  {
+    "s": 16,
+    "q": 62,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify hilum structures",
+    "bloom": "Remember",
+    "question": "The medial indentation of the kidney, where vessels and the ureter enter and exit, is the:",
+    "options": {
+      "A": "Renal hilum",
+      "B": "Renal cortex",
+      "C": "Renal pyramid",
+      "D": "Trigone"
+    },
+    "answer": "A",
+    "stationImg": "Juxtaglomerular apparatus diagram (macula densa, juxtaglomerular cells); a medial kidney view with the hilum (A); a PCT reabsorption schematic; and a renal cortex micrograph with renal corpuscles (glomerulus + Bowman's capsule)."
+  },
+  {
+    "s": 16,
+    "q": 63,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Understand tubular function",
+    "bloom": "Understand",
+    "question": "What is the primary function of the proximal convoluted tubule?",
+    "options": {
+      "A": "Reabsorb most of the water, ions, and nutrients from the filtrate",
+      "B": "Filter the blood",
+      "C": "Store urine",
+      "D": "Produce renin exclusively"
+    },
+    "answer": "A",
+    "stationImg": "Juxtaglomerular apparatus diagram (macula densa, juxtaglomerular cells); a medial kidney view with the hilum (A); a PCT reabsorption schematic; and a renal cortex micrograph with renal corpuscles (glomerulus + Bowman's capsule)."
+  },
+  {
+    "s": 16,
+    "q": 64,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify specific histology",
+    "bloom": "Remember",
+    "question": "The spherical structure with a capillary tuft surrounded by Bowman's capsule is the:",
+    "options": {
+      "A": "Collecting duct",
+      "B": "Renal corpuscle",
+      "C": "Minor calyx",
+      "D": "Bladder trigone"
+    },
+    "answer": "B",
+    "stationImg": "Juxtaglomerular apparatus diagram (macula densa, juxtaglomerular cells); a medial kidney view with the hilum (A); a PCT reabsorption schematic; and a renal cortex micrograph with renal corpuscles (glomerulus + Bowman's capsule)."
+  },
+  {
+    "s": 17,
+    "q": 65,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Analyze sphincter control",
+    "bloom": "Analyze",
+    "question": "Analyzing micturition control, which statement about the urethral sphincters is correct?",
+    "options": {
+      "A": "Both are voluntary",
+      "B": "Both are involuntary smooth muscle",
+      "C": "The internal is skeletal and the external is smooth",
+      "D": "The internal sphincter is involuntary (smooth muscle) and the external is voluntary (skeletal muscle)"
+    },
+    "answer": "D",
+    "stationImg": "Bladder/urethra section with internal and external sphincters; a nephron diagram showing the path of filtrate; a renal vascular diagram with glomerulus and peritubular capillaries (A); and an abdominal cross-section showing the retroperitoneal kidneys."
+  },
+  {
+    "s": 17,
+    "q": 66,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Trace filtrate flow",
+    "bloom": "Apply",
+    "question": "The filtrate follows the sequence: Bowman's capsule → PCT → loop of Henle → DCT → ?",
+    "options": {
+      "A": "Afferent arteriole",
+      "B": "Glomerulus",
+      "C": "Renal vein",
+      "D": "Collecting duct"
+    },
+    "answer": "D",
+    "stationImg": "Bladder/urethra section with internal and external sphincters; a nephron diagram showing the path of filtrate; a renal vascular diagram with glomerulus and peritubular capillaries (A); and an abdominal cross-section showing the retroperitoneal kidneys."
+  },
+  {
+    "s": 17,
+    "q": 67,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify capillary beds",
+    "bloom": "Remember",
+    "question": "The capillary network that surrounds the renal tubules and participates in reabsorption is the:",
+    "options": {
+      "A": "Glomerulus",
+      "B": "Arcuate artery",
+      "C": "Peritubular capillaries",
+      "D": "Vasa recta exclusively"
+    },
+    "answer": "C",
+    "stationImg": "Bladder/urethra section with internal and external sphincters; a nephron diagram showing the path of filtrate; a renal vascular diagram with glomerulus and peritubular capillaries (A); and an abdominal cross-section showing the retroperitoneal kidneys."
+  },
+  {
+    "s": 17,
+    "q": 68,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Understand kidney location",
+    "bloom": "Understand",
+    "question": "How is the location of the kidneys correctly described?",
+    "options": {
+      "A": "Within the pleural cavity",
+      "B": "In the mediastinum",
+      "C": "Intraperitoneal in the pelvis",
+      "D": "Retroperitoneal, posterior to the parietal peritoneum"
+    },
+    "answer": "D",
+    "stationImg": "Bladder/urethra section with internal and external sphincters; a nephron diagram showing the path of filtrate; a renal vascular diagram with glomerulus and peritubular capillaries (A); and an abdominal cross-section showing the retroperitoneal kidneys."
+  },
+  {
+    "s": 18,
+    "q": 69,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Identify structural marks",
+    "bloom": "Remember",
+    "question": "The smooth triangular region of the bladder floor between the ureteral and urethral openings is the:",
+    "options": {
+      "A": "Trigone",
+      "B": "Detrusor",
+      "C": "Hilum",
+      "D": "Major calyx"
+    },
+    "answer": "A",
+    "stationImg": "Sectioned bladder showing the trigone (A) and ureteral/urethral openings; afferent and efferent arterioles with a caliber difference at the glomerulus; and a urine dipstick with a urinometer floating in a cylinder."
+  },
+  {
+    "s": 18,
+    "q": 70,
+    "ex": "Ex 11: Urinary System",
+    "lo": "Evaluate vascular pressures",
+    "bloom": "Evaluate",
+    "question": "The high glomerular filtration pressure is maintained mainly because:",
+    "options": {
+      "A": "The efferent arteriole is larger in caliber than the afferent",
+      "B": "There are no arterioles in the glomerulus",
+      "C": "The afferent arteriole is larger in caliber than the efferent",
+      "D": "The glomerulus drains directly into the ureter"
+    },
+    "answer": "C",
+    "stationImg": "Sectioned bladder showing the trigone (A) and ureteral/urethral openings; afferent and efferent arterioles with a caliber difference at the glomerulus; and a urine dipstick with a urinometer floating in a cylinder."
+  },
+  {
+    "s": 18,
+    "q": 71,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Perform physical analysis",
+    "bloom": "Remember",
+    "question": "In the physical analysis of urine, which of the following is a physical parameter evaluated?",
+    "options": {
+      "A": "Blood lymphocyte count",
+      "B": "Color and clarity",
+      "C": "Gastric juice pH",
+      "D": "Tidal volume"
+    },
+    "answer": "B",
+    "stationImg": "Sectioned bladder showing the trigone (A) and ureteral/urethral openings; afferent and efferent arterioles with a caliber difference at the glomerulus; and a urine dipstick with a urinometer floating in a cylinder."
+  },
+  {
+    "s": 18,
+    "q": 72,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Identify specific gravity",
+    "bloom": "Remember",
+    "question": "The normal range of the specific gravity of freshly voided urine is:",
+    "options": {
+      "A": "7.35 - 7.45",
+      "B": "4.6 - 8.0",
+      "C": "1.5 - 3.0",
+      "D": "1.003 - 1.035"
+    },
+    "answer": "D",
+    "stationImg": "Sectioned bladder showing the trigone (A) and ureteral/urethral openings; afferent and efferent arterioles with a caliber difference at the glomerulus; and a urine dipstick with a urinometer floating in a cylinder."
+  },
+  {
+    "s": 19,
+    "q": 73,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Understand organized sediments",
+    "bloom": "Understand",
+    "question": "The organized sediments of urine, of biological origin, include:",
+    "options": {
+      "A": "Leukocytes, erythrocytes, epithelial cells, and casts",
+      "B": "Crystals and calculi",
+      "C": "Ions and electrolytes",
+      "D": "Surfactant and alveolar mucus"
+    },
+    "answer": "A",
+    "stationImg": "Micrograph of organized urinary sediment (casts, epithelial cells, leukocytes) and unorganized sediment (crystals, renal calculus); a colorimetric dipstick (glucose/protein/ketones); and a urine color gradient."
+  },
+  {
+    "s": 19,
+    "q": 74,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Apply chemical analysis",
+    "bloom": "Apply",
+    "question": "A dipstick positive for glucose in urine (glucosuria) clinically suggests:",
+    "options": {
+      "A": "Possible hyperglycemia exceeding the renal threshold (e.g., diabetes)",
+      "B": "Respiratory alkalosis",
+      "C": "Dehydration only",
+      "D": "A guaranteed fungal infection"
+    },
+    "answer": "A",
+    "stationImg": "Micrograph of organized urinary sediment (casts, epithelial cells, leukocytes) and unorganized sediment (crystals, renal calculus); a colorimetric dipstick (glucose/protein/ketones); and a urine color gradient."
+  },
+  {
+    "s": 19,
+    "q": 75,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Analyze urine color",
+    "bloom": "Analyze",
+    "question": "A very dark amber, concentrated urine most likely suggests:",
+    "options": {
+      "A": "Overhydration",
+      "B": "Alkaline pH exclusively",
+      "C": "Presence of surfactant",
+      "D": "Dehydration with high specific gravity"
+    },
+    "answer": "D",
+    "stationImg": "Micrograph of organized urinary sediment (casts, epithelial cells, leukocytes) and unorganized sediment (crystals, renal calculus); a colorimetric dipstick (glucose/protein/ketones); and a urine color gradient."
+  },
+  {
+    "s": 19,
+    "q": 76,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Identify unorganized sediments",
+    "bloom": "Remember",
+    "question": "The unorganized sediments (of chemical origin) in urine include:",
+    "options": {
+      "A": "White blood cells",
+      "B": "Cellular casts",
+      "C": "Epithelial cells",
+      "D": "Crystals and renal calculi"
+    },
+    "answer": "D",
+    "stationImg": "Micrograph of organized urinary sediment (casts, epithelial cells, leukocytes) and unorganized sediment (crystals, renal calculus); a colorimetric dipstick (glucose/protein/ketones); and a urine color gradient."
+  },
+  {
+    "s": 20,
+    "q": 77,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Understand sediment types",
+    "bloom": "Understand",
+    "question": "What is the fundamental difference between organized and unorganized sediments?",
+    "options": {
+      "A": "Organized are crystals; unorganized are cells",
+      "B": "Both are always pathological",
+      "C": "Organized are biological (cells/casts); unorganized are chemical (crystals)",
+      "D": "There is no difference"
+    },
+    "answer": "C",
+    "stationImg": "Comparative table of organized (biological) vs. unorganized (chemical) sediments; a micrograph with abundant leukocytes and bacteria; a urinometer/hydrometer in a cylinder; and a dipstick positive for protein."
+  },
+  {
+    "s": 20,
+    "q": 78,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Evaluate pathology",
+    "bloom": "Evaluate",
+    "question": "The presence of numerous leukocytes (pus) in the urine most likely suggests:",
+    "options": {
+      "A": "Mild dehydration",
+      "B": "A normal high-protein diet",
+      "C": "An unaltered physiological state",
+      "D": "Urinary tract infection"
+    },
+    "answer": "D",
+    "stationImg": "Comparative table of organized (biological) vs. unorganized (chemical) sediments; a micrograph with abundant leukocytes and bacteria; a urinometer/hydrometer in a cylinder; and a dipstick positive for protein."
+  },
+  {
+    "s": 20,
+    "q": 79,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Identify specific gravity tool",
+    "bloom": "Remember",
+    "question": "The instrument used to measure the specific gravity of urine is the:",
+    "options": {
+      "A": "Spirometer",
+      "B": "Compound microscope",
+      "C": "Urinometer (hydrometer)",
+      "D": "Sphygmomanometer"
+    },
+    "answer": "C",
+    "stationImg": "Comparative table of organized (biological) vs. unorganized (chemical) sediments; a micrograph with abundant leukocytes and bacteria; a urinometer/hydrometer in a cylinder; and a dipstick positive for protein."
+  },
+  {
+    "s": 20,
+    "q": 80,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Analyze protein presence",
+    "bloom": "Analyze",
+    "question": "Persistent proteinuria most likely suggests an alteration of:",
+    "options": {
+      "A": "Normal low specific gravity",
+      "B": "Gastric pH",
+      "C": "Tidal volume",
+      "D": "The glomerular filtration barrier"
+    },
+    "answer": "D",
+    "stationImg": "Comparative table of organized (biological) vs. unorganized (chemical) sediments; a micrograph with abundant leukocytes and bacteria; a urinometer/hydrometer in a cylinder; and a dipstick positive for protein."
+  },
+  {
+    "s": 21,
+    "q": 81,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Identify abnormal findings",
+    "bloom": "Remember",
+    "question": "Which of the following is an abnormal (pathological) finding in urine?",
+    "options": {
+      "A": "Glucose",
+      "B": "pH 6.0",
+      "C": "Specific gravity 1.015",
+      "D": "Pale yellow color"
+    },
+    "answer": "A",
+    "stationImg": "Dipstick panel with abnormal findings highlighted (glucose, ketones, blood); a diagram of normal urine composition (water, urea, ions); and a schematic of dietary effect on urine pH."
+  },
+  {
+    "s": 21,
+    "q": 82,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Understand urine composition",
+    "bloom": "Understand",
+    "question": "Under normal conditions, the main component of urine besides water is:",
+    "options": {
+      "A": "Glucose",
+      "B": "Plasma proteins",
+      "C": "Urea and other nitrogenous wastes",
+      "D": "Red blood cells"
+    },
+    "answer": "C",
+    "stationImg": "Dipstick panel with abnormal findings highlighted (glucose, ketones, blood); a diagram of normal urine composition (water, urea, ions); and a schematic of dietary effect on urine pH."
+  },
+  {
+    "s": 21,
+    "q": 83,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Apply dietary effects",
+    "bloom": "Apply",
+    "question": "A high-protein diet tends to produce urine with a pH that is:",
+    "options": {
+      "A": "More alkaline (near 8.0)",
+      "B": "Exactly 7.0 always",
+      "C": "Equal to gastric juice pH",
+      "D": "More acidic (trending toward the low end of the 4.6-8.0 range)"
+    },
+    "answer": "D",
+    "stationImg": "Dipstick panel with abnormal findings highlighted (glucose, ketones, blood); a diagram of normal urine composition (water, urea, ions); and a schematic of dietary effect on urine pH."
+  },
+  {
+    "s": 21,
+    "q": 84,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Evaluate ketone presence",
+    "bloom": "Evaluate",
+    "question": "The presence of ketones in the urine (ketonuria) is most likely associated with:",
+    "options": {
+      "A": "Overhydration",
+      "B": "A high-carbohydrate diet",
+      "C": "Increased fat metabolism (fasting, uncontrolled diabetes)",
+      "D": "A normal physiological state"
+    },
+    "answer": "C",
+    "stationImg": "Dipstick panel with abnormal findings highlighted (glucose, ketones, blood); a diagram of normal urine composition (water, urea, ions); and a schematic of dietary effect on urine pH."
+  },
+  {
+    "s": 22,
+    "q": 85,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Identify sediment origin",
+    "bloom": "Remember",
+    "question": "The casts found in urinary sediment originally form in the:",
+    "options": {
+      "A": "Bladder",
+      "B": "Penile urethra",
+      "C": "Renal tubules",
+      "D": "Thoracic duct"
+    },
+    "answer": "C",
+    "stationImg": "Micrograph of urinary casts (formed in renal tubules) and of renal calculi; comparison of urinometer readings in dilute (1.005) vs. concentrated (1.030) urine; and a diagram of a salt dissociating into ions."
+  },
+  {
+    "s": 22,
+    "q": 86,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Understand calculi",
+    "bloom": "Understand",
+    "question": "A renal calculus is classified among the sediments that are:",
+    "options": {
+      "A": "Organized (biological)",
+      "B": "Unorganized (chemical)",
+      "C": "Gaseous",
+      "D": "Epithelial"
+    },
+    "answer": "B",
+    "stationImg": "Micrograph of urinary casts (formed in renal tubules) and of renal calculi; comparison of urinometer readings in dilute (1.005) vs. concentrated (1.030) urine; and a diagram of a salt dissociating into ions."
+  },
+  {
+    "s": 22,
+    "q": 87,
+    "ex": "Ex 12: Urinalysis",
+    "lo": "Analyze specific gravity",
+    "bloom": "Analyze",
+    "question": "A urine specific gravity of 1.030 compared with 1.005 indicates urine that is:",
+    "options": {
+      "A": "More dilute",
+      "B": "More concentrated (greater amount of solutes)",
+      "C": "With higher pH",
+      "D": "Without solutes"
+    },
+    "answer": "B",
+    "stationImg": "Micrograph of urinary casts (formed in renal tubules) and of renal calculi; comparison of urinometer readings in dilute (1.005) vs. concentrated (1.030) urine; and a diagram of a salt dissociating into ions."
+  },
+  {
+    "s": 22,
+    "q": 88,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Define electrolytes",
+    "bloom": "Remember",
+    "question": "A substance that dissociates into ions in solution and conducts electric current is a(n):",
+    "options": {
+      "A": "Non-ionic buffer",
+      "B": "Neutral lipid",
+      "C": "Inert gas",
+      "D": "Electrolyte"
+    },
+    "answer": "D",
+    "stationImg": "Micrograph of urinary casts (formed in renal tubules) and of renal calculi; comparison of urinometer readings in dilute (1.005) vs. concentrated (1.030) urine; and a diagram of a salt dissociating into ions."
+  },
+  {
+    "s": 23,
+    "q": 89,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Identify cations",
+    "bloom": "Remember",
+    "question": "Which of the following is a cation (positively charged ion)?",
+    "options": {
+      "A": "Cl⁻",
+      "B": "HCO₃⁻",
+      "C": "PO₄³⁻",
+      "D": "Na⁺"
+    },
+    "answer": "D",
+    "stationImg": "Table of ions (cations/anions) and a schematic of an acid releasing H+; a light bulb test setup with electrodes; and a pH scale 0-14 with marked points."
+  },
+  {
+    "s": 23,
+    "q": 90,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Understand acids",
+    "bloom": "Understand",
+    "question": "According to the laboratory's operational definition, an acid is a substance that:",
+    "options": {
+      "A": "Releases hydrogen ions (H⁺) in solution",
+      "B": "Releases hydroxyl ions (OH⁻)",
+      "C": "Does not alter the pH",
+      "D": "Only conducts electricity without dissociating"
+    },
+    "answer": "A",
+    "stationImg": "Table of ions (cations/anions) and a schematic of an acid releasing H+; a light bulb test setup with electrodes; and a pH scale 0-14 with marked points."
+  },
+  {
+    "s": 23,
+    "q": 91,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Apply light bulb test",
+    "bloom": "Apply",
+    "question": "In the light bulb test, a solution that lights the bulb brightly indicates:",
+    "options": {
+      "A": "A non-electrolyte",
+      "B": "Pure distilled water",
+      "C": "A strong electrolyte with many free ions",
+      "D": "A solution with no solutes"
+    },
+    "answer": "C",
+    "stationImg": "Table of ions (cations/anions) and a schematic of an acid releasing H+; a light bulb test setup with electrodes; and a pH scale 0-14 with marked points."
+  },
+  {
+    "s": 23,
+    "q": 92,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Analyze pH values",
+    "bloom": "Analyze",
+    "question": "A solution with pH 3 compared with one of pH 5 is:",
+    "options": {
+      "A": "2 times more acidic",
+      "B": "More basic",
+      "C": "100 times more acidic",
+      "D": "Neutral"
+    },
+    "answer": "C",
+    "stationImg": "Table of ions (cations/anions) and a schematic of an acid releasing H+; a light bulb test setup with electrodes; and a pH scale 0-14 with marked points."
+  },
+  {
+    "s": 24,
+    "q": 93,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Identify body fluid pH",
+    "bloom": "Remember",
+    "question": "The normal pH range of blood is:",
+    "options": {
+      "A": "7.35 - 7.45",
+      "B": "1.5 - 3.0",
+      "C": "4.6 - 8.0",
+      "D": "3.5 - 4.5"
+    },
+    "answer": "A",
+    "stationImg": "Table of body fluid pH (blood 7.35-7.45, etc.); a schematic of a buffer system resisting pH change; a diagram of the bicarbonate buffer system in blood; and a depiction of a base accepting H+ / releasing OH-."
+  },
+  {
+    "s": 24,
+    "q": 94,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Define buffers",
+    "bloom": "Remember",
+    "question": "A buffer is a substance that:",
+    "options": {
+      "A": "Always increases the pH",
+      "B": "Always decreases the pH",
+      "C": "Resists changes in pH when acid or base is added",
+      "D": "Conducts electricity without affecting the pH"
+    },
+    "answer": "C",
+    "stationImg": "Table of body fluid pH (blood 7.35-7.45, etc.); a schematic of a buffer system resisting pH change; a diagram of the bicarbonate buffer system in blood; and a depiction of a base accepting H+ / releasing OH-."
+  },
+  {
+    "s": 24,
+    "q": 95,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Understand bases",
+    "bloom": "Understand",
+    "question": "A base is characterized by:",
+    "options": {
+      "A": "Releasing H⁺, lowering the pH",
+      "B": "Not reacting in solution",
+      "C": "Always being a non-electrolyte",
+      "D": "Accepting H⁺ ions or releasing OH⁻, raising the pH"
+    },
+    "answer": "D",
+    "stationImg": "Table of body fluid pH (blood 7.35-7.45, etc.); a schematic of a buffer system resisting pH change; a diagram of the bicarbonate buffer system in blood; and a depiction of a base accepting H+ / releasing OH-."
+  },
+  {
+    "s": 24,
+    "q": 96,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Apply buffer function",
+    "bloom": "Apply",
+    "question": "If a strong acid is added to the blood, the bicarbonate buffer system responds by:",
+    "options": {
+      "A": "Neutralizing the H⁺ with HCO₃⁻ to minimize the pH change",
+      "B": "Sharply increasing the pH",
+      "C": "Eliminating all the bicarbonate",
+      "D": "Not reacting"
+    },
+    "answer": "A",
+    "stationImg": "Table of body fluid pH (blood 7.35-7.45, etc.); a schematic of a buffer system resisting pH change; a diagram of the bicarbonate buffer system in blood; and a depiction of a base accepting H+ / releasing OH-."
+  },
+  {
+    "s": 25,
+    "q": 97,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Identify gastric pH",
+    "bloom": "Remember",
+    "question": "The pH range of gastric juice is:",
+    "options": {
+      "A": "7.35 - 7.45",
+      "B": "6.4 - 7.4",
+      "C": "7.1 - 8.0",
+      "D": "1.5 - 3.0"
+    },
+    "answer": "D",
+    "stationImg": "Table of body fluid pH with gastric juice highlighted; comparison of buffer systems (bicarbonate, phosphate, protein); a schematic of salt formation (acid + base); and a diagram of an atom gaining/losing electrons (ion)."
+  },
+  {
+    "s": 25,
+    "q": 98,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Analyze buffer systems",
+    "bloom": "Analyze",
+    "question": "Which buffer system is the principal regulator of pH in blood plasma?",
+    "options": {
+      "A": "Bicarbonate system",
+      "B": "Intracellular phosphate system exclusively",
+      "C": "Urea system",
+      "D": "Chloride system"
+    },
+    "answer": "A",
+    "stationImg": "Table of body fluid pH with gastric juice highlighted; comparison of buffer systems (bicarbonate, phosphate, protein); a schematic of salt formation (acid + base); and a diagram of an atom gaining/losing electrons (ion)."
+  },
+  {
+    "s": 25,
+    "q": 99,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Identify salts",
+    "bloom": "Remember",
+    "question": "A salt is typically formed from the reaction between:",
+    "options": {
+      "A": "Two acids",
+      "B": "An acid and a base",
+      "C": "Two bases",
+      "D": "A gas and water"
+    },
+    "answer": "B",
+    "stationImg": "Table of body fluid pH with gastric juice highlighted; comparison of buffer systems (bicarbonate, phosphate, protein); a schematic of salt formation (acid + base); and a diagram of an atom gaining/losing electrons (ion)."
+  },
+  {
+    "s": 25,
+    "q": 100,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Understand ions",
+    "bloom": "Understand",
+    "question": "An ion is formed when an atom:",
+    "options": {
+      "A": "Gains or loses protons from the nucleus",
+      "B": "Gains or loses electrons, acquiring an electric charge",
+      "C": "Does not change its charge",
+      "D": "Combines with an inert gas"
+    },
+    "answer": "B",
+    "stationImg": "Table of body fluid pH with gastric juice highlighted; comparison of buffer systems (bicarbonate, phosphate, protein); a schematic of salt formation (acid + base); and a diagram of an atom gaining/losing electrons (ion)."
+  },
+  {
+    "s": 26,
+    "q": 101,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Apply respiratory compensation",
+    "bloom": "Apply",
+    "question": "In response to acidosis (low blood pH), the respiratory system compensates by:",
+    "options": {
+      "A": "Decreasing ventilation to retain CO₂",
+      "B": "Increasing ventilation to eliminate CO₂",
+      "C": "Stopping breathing",
+      "D": "Increasing urine specific gravity"
+    },
+    "answer": "B",
+    "stationImg": "Respiratory compensation diagram of blood pH via ventilation; a comparative pH scale of body fluids (gastric, vaginal, saliva, urine, semen, blood); and a comparative light bulb test setup for strong, weak, and non-electrolytes."
+  },
+  {
+    "s": 26,
+    "q": 102,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Identify semen pH",
+    "bloom": "Remember",
+    "question": "The pH range of semen is:",
+    "options": {
+      "A": "1.5 - 3.0",
+      "B": "3.5 - 4.5",
+      "C": "4.6 - 8.0",
+      "D": "7.1 - 8.0"
+    },
+    "answer": "D",
+    "stationImg": "Respiratory compensation diagram of blood pH via ventilation; a comparative pH scale of body fluids (gastric, vaginal, saliva, urine, semen, blood); and a comparative light bulb test setup for strong, weak, and non-electrolytes."
+  },
+  {
+    "s": 26,
+    "q": 103,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Evaluate fluid pH",
+    "bloom": "Evaluate",
+    "question": "Comparing the body fluids in the list, which is the MOST acidic?",
+    "options": {
+      "A": "Gastric juice (1.5-3.0)",
+      "B": "Blood (7.35-7.45)",
+      "C": "Semen (7.1-8.0)",
+      "D": "Saliva (6.4-7.4)"
+    },
+    "answer": "A",
+    "stationImg": "Respiratory compensation diagram of blood pH via ventilation; a comparative pH scale of body fluids (gastric, vaginal, saliva, urine, semen, blood); and a comparative light bulb test setup for strong, weak, and non-electrolytes."
+  },
+  {
+    "s": 26,
+    "q": 104,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Understand saliva pH",
+    "bloom": "Understand",
+    "question": "The approximate pH range of saliva is:",
+    "options": {
+      "A": "6.4 - 7.4",
+      "B": "1.5 - 3.0",
+      "C": "3.5 - 4.5",
+      "D": "7.35 - 7.45"
+    },
+    "answer": "A",
+    "stationImg": "Respiratory compensation diagram of blood pH via ventilation; a comparative pH scale of body fluids (gastric, vaginal, saliva, urine, semen, blood); and a comparative light bulb test setup for strong, weak, and non-electrolytes."
+  },
+  {
+    "s": 26,
+    "q": 105,
+    "ex": "Ex 13: Acid-Base",
+    "lo": "Analyze light bulb exp",
+    "bloom": "Analyze",
+    "question": "In the light bulb test, a solution that lights the bulb dimly compared with one that lights it brightly indicates:",
+    "options": {
+      "A": "A stronger electrolyte",
+      "B": "Total absence of ions",
+      "C": "Pure distilled water",
+      "D": "A weak electrolyte with less ionic dissociation"
+    },
+    "answer": "D",
+    "stationImg": "Respiratory compensation diagram of blood pH via ventilation; a comparative pH scale of body fluids (gastric, vaginal, saliva, urine, semen, blood); and a comparative light bulb test setup for strong, weak, and non-electrolytes."
+  }
+]

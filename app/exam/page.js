@@ -143,8 +143,8 @@ function ExamContent() {
       examDate,
       course: {
         code: courseCode,
-        name: 'Anatomy & Physiology I',
-        label: `${courseCode} · Lab Practical Exam #1`,
+        name: examData.courseName,
+        label: `${courseCode} · ${examData.examTitle}`,
         bank: allQuestions,
       },
       scoreData,
@@ -182,7 +182,7 @@ function ExamContent() {
       <div className="shell">
         <header className="topbar">
           <div className="topbar__brand">
-            <span className="topbar__title">BIOL {courseCode} · Lab Practical Exam #1</span>
+            <span className="topbar__title">{courseCode} · {examData.examTitle}</span>
             <span className="topbar__subtitle">Performance Report</span>
           </div>
         </header>
@@ -262,7 +262,7 @@ function ExamContent() {
     <div className="shell">
       <header className="topbar">
         <div className="topbar__brand">
-          <span className="topbar__title">{courseCode} · Lab Practical Exam #1</span>
+          <span className="topbar__title">{courseCode} · {examData.examTitle}</span>
           <span className="topbar__subtitle">
             {mode === 'study' ? 'Study Guide' : 'Exam'} · Section {section} · Station {station.number} of {totalStations}
           </span>
