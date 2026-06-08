@@ -22,9 +22,24 @@ function bloomColor(level) {
   return map[level] || '#8b95a5';
 }
 
+const COURSE_COLORS = {
+  BIOL2401: { bg: 'rgba(45,212,191,0.15)', text: '#2dd4bf' },
+  BIOL2402: { bg: 'rgba(139,92,246,0.15)', text: '#8b5cf6' },
+};
+
+function CourseBadge({ code }) {
+  const c = COURSE_COLORS[code] || { bg: 'rgba(139,149,165,0.15)', text: '#8b95a5' };
+  return (
+    <span style={{ padding: '0.15rem 0.5rem', borderRadius: '999px', fontSize: 'var(--fs-xs)', background: c.bg, color: c.text, fontWeight: 600 }}>
+      {code}
+    </span>
+  );
+}
+
 function downloadCSV(attempts) {
-  const header = ['Name', 'Email', 'Section', 'Mode', 'Score', 'Total', 'Percent', 'Duration', 'Date'];
+  const header = ['Course', 'Name', 'Email', 'Section', 'Mode', 'Score', 'Total', 'Percent', 'Duration', 'Date'];
   const rows = attempts.map(a => [
+    a.course_code || '',
     a.student_name,
     a.student_email,
     a.course_section || '',
@@ -45,6 +60,43 @@ function downloadCSV(attempts) {
   URL.revokeObjectURL(url);
 }
 
+// ── Course filter pills ───────────────────────────────────────────
+
+function CourseFilter({ value, onChange }) {
+  const options = [
+    { value: 'all', label: 'All Courses' },
+    { value: 'BIOL2401', label: 'BIOL 2401' },
+    { value: 'BIOL2402', label: 'BIOL 2402' },
+  ];
+  return (
+    <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '1.5rem' }}>
+      {options.map(opt => {
+        const active = value === opt.value;
+        const c = COURSE_COLORS[opt.value];
+        return (
+          <button
+            key={opt.value}
+            onClick={() => onChange(opt.value)}
+            style={{
+              padding: '0.35rem 0.9rem',
+              borderRadius: '999px',
+              fontSize: 'var(--fs-xs)',
+              fontWeight: active ? 700 : 500,
+              cursor: 'pointer',
+              border: `1px solid ${active && c ? c.text : 'var(--border-default)'}`,
+              background: active && c ? c.bg : active ? 'var(--bg-card)' : 'transparent',
+              color: active && c ? c.text : active ? 'var(--text-primary)' : 'var(--text-secondary)',
+              transition: 'all 150ms',
+            }}
+          >
+            {opt.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 // ── Main Component ────────────────────────────────────────────────
 
 export default function AdminDashboard() {
@@ -56,14 +108,15 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
 
   // Filters
+  const [filterCourse, setFilterCourse] = useState('all');
   const [filterMode, setFilterMode] = useState('all');
   const [filterSection, setFilterSection] = useState('');
   const [search, setSearch] = useState('');
 
-  const fetchData = useCallback(async (type) => {
+  const fetchData = useCallback(async (type, course = 'all') => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/data?type=${type}`);
+      const res = await fetch(`/api/admin/data?type=${type}&course=${course}`);
       if (res.status === 401) { router.push('/admin'); return; }
       const json = await res.json();
 
@@ -77,18 +130,24 @@ export default function AdminDashboard() {
     }
   }, [router]);
 
+  // Initial load
   useEffect(() => {
-    fetchData('overview');
+    fetchData('overview', 'all');
+    fetchData('attempts', 'all');
   }, [fetchData]);
 
   useEffect(() => {
-    if (tab === 'overview' && !overview) fetchData('overview');
-    if (tab === 'attempts' && attempts.length === 0) fetchData('attempts');
-    if (tab === 'analytics' && analytics.length === 0) fetchData('analytics');
-  }, [tab, overview, attempts.length, analytics.length, fetchData]);
+    if (tab === 'analytics' && analytics.length === 0) fetchData('analytics', 'all');
+  }, [tab, analytics.length, fetchData]);
 
-  // Filtered attempts
+  // Re-fetch overview when course filter changes
+  useEffect(() => {
+    fetchData('overview', filterCourse);
+  }, [filterCourse, fetchData]);
+
+  // Client-side filtering for attempts
   const filtered = attempts.filter(a => {
+    if (filterCourse !== 'all' && a.course_code !== filterCourse) return false;
     if (filterMode !== 'all' && a.mode !== filterMode) return false;
     if (filterSection && !a.course_section?.toLowerCase().includes(filterSection.toLowerCase())) return false;
     if (search) {
@@ -98,7 +157,14 @@ export default function AdminDashboard() {
     return true;
   });
 
+  // Client-side filtering for analytics
+  const filteredAnalytics = filterCourse === 'all'
+    ? analytics
+    : analytics.filter(q => q.course_code === filterCourse);
+
   const uniqueSections = [...new Set(attempts.map(a => a.course_section).filter(Boolean))].sort();
+
+  const courseLabel = filterCourse === 'all' ? 'All Courses' : filterCourse.replace('BIOL', 'BIOL ');
 
   return (
     <div className="shell">
@@ -106,11 +172,11 @@ export default function AdminDashboard() {
       <header className="topbar">
         <div className="topbar__brand">
           <span className="topbar__title">Admin Dashboard</span>
-          <span className="topbar__subtitle">Station Exam Builder · BIOL 2401</span>
+          <span className="topbar__subtitle">Station Exam Builder · {courseLabel}</span>
         </div>
         <div className="topbar__meta" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
           <button
-            onClick={() => { fetchData(tab); }}
+            onClick={() => fetchData(tab, filterCourse)}
             style={{ padding: '0.4rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', background: 'transparent', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', cursor: 'pointer' }}
           >
             Refresh
@@ -124,7 +190,7 @@ export default function AdminDashboard() {
       <main className="main" style={{ padding: '2rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
 
         {/* Tabs */}
-        <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0' }}>
+        <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0' }}>
           {['overview', 'attempts', 'analytics'].map(t => (
             <button
               key={t}
@@ -146,6 +212,9 @@ export default function AdminDashboard() {
           ))}
         </div>
 
+        {/* Course filter — shown on all tabs */}
+        <CourseFilter value={filterCourse} onChange={setFilterCourse} />
+
         {/* ── OVERVIEW TAB ── */}
         {tab === 'overview' && (
           <div>
@@ -166,7 +235,7 @@ export default function AdminDashboard() {
                   <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                     <button className="btn btn--primary" onClick={() => setTab('attempts')}>View All Attempts</button>
                     <button className="btn" onClick={() => setTab('analytics')}>Question Analytics</button>
-                    <button className="btn" onClick={() => { fetchData('attempts').then(() => downloadCSV(attempts)); setTab('attempts'); }}>
+                    <button className="btn" onClick={() => downloadCSV(filtered)}>
                       Export CSV
                     </button>
                   </div>
@@ -222,19 +291,22 @@ export default function AdminDashboard() {
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--fs-sm)' }}>
                   <thead>
                     <tr style={{ borderBottom: '1px solid var(--border-default)', color: 'var(--text-secondary)', textAlign: 'left' }}>
-                      {['Name', 'Email', 'Section', 'Mode', 'Score', '%', 'Time', 'Date'].map(h => (
+                      {['Course', 'Name', 'Email', 'Section', 'Mode', 'Score', '%', 'Time', 'Date'].map(h => (
                         <th key={h} style={{ padding: '0.6rem 0.75rem', fontWeight: 600, whiteSpace: 'nowrap' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {filtered.length === 0 ? (
-                      <tr><td colSpan={8} style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>No attempts found.</td></tr>
+                      <tr><td colSpan={9} style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>No attempts found.</td></tr>
                     ) : filtered.map(a => (
                       <tr key={a.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}
                         onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-card-hover)'}
                         onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                       >
+                        <td style={{ padding: '0.6rem 0.75rem' }}>
+                          <CourseBadge code={a.course_code} />
+                        </td>
                         <td style={{ padding: '0.6rem 0.75rem', fontWeight: 500 }}>{a.student_name}</td>
                         <td style={{ padding: '0.6rem 0.75rem', color: 'var(--text-secondary)' }}>{a.student_email}</td>
                         <td style={{ padding: '0.6rem 0.75rem', color: 'var(--text-secondary)' }}>{a.course_section || '—'}</td>
@@ -267,16 +339,16 @@ export default function AdminDashboard() {
         {tab === 'analytics' && (
           <div>
             <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', marginBottom: '1.5rem' }}>
-              Top 20 most missed questions (minimum 3 attempts)
+              Top 20 most missed questions (minimum 3 attempts) · {courseLabel}
             </p>
             {loading ? (
               <p style={{ color: 'var(--text-secondary)' }}>Loading...</p>
-            ) : analytics.length === 0 ? (
+            ) : filteredAnalytics.length === 0 ? (
               <p style={{ color: 'var(--text-secondary)' }}>Not enough data yet. Students need to complete exams first.</p>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {analytics.map((q, i) => (
-                  <div key={q.question_number} className="card" style={{ padding: '1rem 1.25rem' }}>
+                {filteredAnalytics.map((q, i) => (
+                  <div key={`${q.course_code}-${q.question_number}`} className="card" style={{ padding: '1rem 1.25rem' }}>
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                       {/* Rank */}
                       <div style={{ minWidth: '2rem', fontFamily: 'var(--ff-display)', fontWeight: 800, fontSize: 'var(--fs-lg)', color: i < 3 ? '#ef4444' : 'var(--text-tertiary)' }}>
@@ -286,6 +358,7 @@ export default function AdminDashboard() {
                       {/* Content */}
                       <div style={{ flex: 1 }}>
                         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                          <CourseBadge code={q.course_code} />
                           <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)' }}>
                             Station {q.station_number} · Q{q.question_number}
                           </span>

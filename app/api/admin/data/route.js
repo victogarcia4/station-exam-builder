@@ -22,12 +22,36 @@ export async function GET(request) {
   const supabase = getSupabase();
   const { searchParams } = new URL(request.url);
   const type = searchParams.get('type') || 'overview';
+  const courseFilter = searchParams.get('course') || 'all';
 
+  // Build exam_id -> course_code map (used by all endpoints)
+  const { data: allExams } = await supabase
+    .from('exams')
+    .select('id, courses!course_id(code)');
+
+  const examCourseMap = {};
+  allExams?.forEach(e => { examCourseMap[e.id] = e.courses?.code || '—'; });
+
+  // Get exam IDs for a specific course (for server-side filtering)
+  const filteredExamIds = courseFilter === 'all'
+    ? null
+    : Object.entries(examCourseMap).filter(([, code]) => code === courseFilter).map(([id]) => id);
+
+  // ── OVERVIEW ─────────────────────────────────────────────────────────────
   if (type === 'overview') {
-    const { data: attempts } = await supabase
+    let query = supabase
       .from('attempts')
-      .select('id, mode, score, total, percent, started_at, completed_at')
+      .select('id, mode, score, total, percent, exam_id')
       .not('completed_at', 'is', null);
+
+    if (filteredExamIds) {
+      if (filteredExamIds.length === 0) {
+        return NextResponse.json({ total: 0, studyCount: 0, examCount: 0, avgScore: 0, passRate: 0 });
+      }
+      query = query.in('exam_id', filteredExamIds);
+    }
+
+    const { data: attempts } = await query;
 
     const total = attempts?.length || 0;
     const studyCount = attempts?.filter(a => a.mode === 'study').length || 0;
@@ -40,48 +64,67 @@ export async function GET(request) {
     return NextResponse.json({ total, studyCount, examCount, avgScore, passRate });
   }
 
+  // ── ATTEMPTS ──────────────────────────────────────────────────────────────
   if (type === 'attempts') {
-    const { data: attempts } = await supabase
+    let query = supabase
       .from('attempts')
-      .select('id, student_name, student_email, course_section, mode, score, total, percent, duration_seconds, started_at, completed_at')
+      .select('id, student_name, student_email, course_section, mode, score, total, percent, duration_seconds, started_at, completed_at, exam_id')
       .order('started_at', { ascending: false })
       .limit(200);
 
-    return NextResponse.json({ attempts: attempts || [] });
+    if (filteredExamIds) {
+      if (filteredExamIds.length === 0) return NextResponse.json({ attempts: [] });
+      query = query.in('exam_id', filteredExamIds);
+    }
+
+    const { data: attempts } = await query;
+
+    const enriched = (attempts || []).map(a => ({
+      ...a,
+      course_code: examCourseMap[a.exam_id] || '—',
+    }));
+
+    return NextResponse.json({ attempts: enriched });
   }
 
+  // ── ANALYTICS ─────────────────────────────────────────────────────────────
   if (type === 'analytics') {
-    // Get all attempt_answers joined with questions
     const { data: answers } = await supabase
       .from('attempt_answers')
       .select(`
         is_correct,
         selected_answer,
-        question:questions(question_number, stem, correct_answer, bloom_level, station:stations(number, exercise))
+        attempt:attempts!attempt_id(exam_id),
+        question:questions!question_id(question_number, stem, correct_answer, bloom_level, station:stations!station_id(number, exercise))
       `)
       .limit(5000);
 
     if (!answers?.length) return NextResponse.json({ questions: [] });
 
-    // Group by question
     const qMap = new Map();
     for (const ans of answers) {
       if (!ans.question) continue;
-      const qNum = ans.question.question_number;
-      if (!qMap.has(qNum)) {
-        qMap.set(qNum, {
-          question_number: qNum,
+
+      const answerCourse = examCourseMap[ans.attempt?.exam_id] || '—';
+      if (filteredExamIds && !filteredExamIds.includes(ans.attempt?.exam_id)) continue;
+
+      // Key by course+question_number to avoid BIOL2401/2402 collisions
+      const key = `${answerCourse}-Q${ans.question.question_number}`;
+      if (!qMap.has(key)) {
+        qMap.set(key, {
+          question_number: ans.question.question_number,
           stem: ans.question.stem,
           correct_answer: ans.question.correct_answer,
           bloom_level: ans.question.bloom_level,
           station_number: ans.question.station?.number,
           station_exercise: ans.question.station?.exercise,
+          course_code: answerCourse,
           total: 0,
           correct: 0,
           answer_counts: { A: 0, B: 0, C: 0, D: 0 },
         });
       }
-      const q = qMap.get(qNum);
+      const q = qMap.get(key);
       q.total++;
       if (ans.is_correct) q.correct++;
       if (ans.selected_answer) q.answer_counts[ans.selected_answer]++;
