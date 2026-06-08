@@ -1,0 +1,1787 @@
+[
+{
+"s": 1,
+"q": 1,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Be able to describe the anatomical position.",
+"bloom": "Remember",
+"stationImg": "A model of a human figure standing upright in anatomical position, with directional reference markers and labeled surface landmarks across the body.",
+"question": "In correct anatomical position the body is standing erect, facing forward, with the upper limbs at the sides and the palms turned in which direction?",
+"options": {
+"A": "Palms facing posteriorly",
+"B": "Palms facing the body midline",
+"C": "Palms facing anteriorly",
+"D": "Palms facing the floor"
+},
+"answer": "C",
+"rationale": "In anatomical position the body is upright, feet flat and forward, with arms at the sides and palms facing anteriorly (forward)."
+},
+{
+"s": 1,
+"q": 2,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Remember",
+"stationImg": "A model of a human figure standing upright in anatomical position, with directional reference markers and labeled surface landmarks across the body.",
+"question": "Which surface region term refers to the front of the elbow?",
+"options": {
+"A": "Popliteal",
+"B": "Antecubital",
+"C": "Sural",
+"D": "Olecranal"
+},
+"answer": "B",
+"rationale": "Antecubital is the anterior surface of the elbow; popliteal is the back of the knee and sural is the calf."
+},
+{
+"s": 1,
+"q": 3,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Apply",
+"stationImg": "A model of a human figure standing upright in anatomical position, with directional reference markers and labeled surface landmarks across the body.",
+"question": "A patient reports pain in the brachial region. Which body part should be examined?",
+"options": {
+"A": "The arm",
+"B": "The thigh",
+"C": "The neck",
+"D": "The foot"
+},
+"answer": "A",
+"rationale": "Brachial refers to the arm; the term maps directly to the upper-limb region between shoulder and elbow."
+},
+{
+"s": 1,
+"q": 4,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Apply",
+"stationImg": "A model of a human figure standing upright in anatomical position, with directional reference markers and labeled surface landmarks across the body.",
+"question": "A clinician documents a wound in the pedal region. Which structure is involved?",
+"options": {
+"A": "The foot",
+"B": "The hand",
+"C": "The chest",
+"D": "The buttock"
+},
+"answer": "A",
+"rationale": "Pedal designates the foot; gluteal would indicate the buttock and pectoral the chest."
+},
+{
+"s": 2,
+"q": 5,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify the cavities of the body and organs found in each cavity.",
+"bloom": "Remember",
+"stationImg": "A midsagittal model of the human trunk and head showing the dorsal and ventral body cavities and their subdivisions with representative organs in place.",
+"question": "Which body cavity is part of the dorsal cavity?",
+"options": {
+"A": "Thoracic cavity",
+"B": "Abdominal cavity",
+"C": "Pelvic cavity",
+"D": "Cranial cavity"
+},
+"answer": "D",
+"rationale": "The cranial cavity (with the vertebral cavity) forms the dorsal cavity; thoracic, abdominal, and pelvic are ventral subdivisions."
+},
+{
+"s": 2,
+"q": 6,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify the cavities of the body and organs found in each cavity.",
+"bloom": "Remember",
+"stationImg": "A midsagittal model of the human trunk and head showing the dorsal and ventral body cavities and their subdivisions with representative organs in place.",
+"question": "The pericardial cavity, which surrounds the heart, is located within which larger cavity?",
+"options": {
+"A": "Cranial cavity",
+"B": "Abdominal cavity",
+"C": "Thoracic cavity",
+"D": "Vertebral cavity"
+},
+"answer": "C",
+"rationale": "The pericardial cavity lies in the mediastinum within the thoracic cavity."
+},
+{
+"s": 2,
+"q": 7,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify the cavities of the body and organs found in each cavity.",
+"bloom": "Apply",
+"stationImg": "A midsagittal model of the human trunk and head showing the dorsal and ventral body cavities and their subdivisions with representative organs in place.",
+"question": "A structure that lies inferior to the diaphragm and superior to the pelvic cavity would be found in which cavity?",
+"options": {
+"A": "Abdominal cavity",
+"B": "Thoracic cavity",
+"C": "Cranial cavity",
+"D": "Pleural cavity"
+},
+"answer": "A",
+"rationale": "Below the diaphragm and above the pelvic cavity is the abdominal cavity, part of the abdominopelvic cavity."
+},
+{
+"s": 3,
+"q": 8,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify abdominopelvic body regions and quadrants.",
+"bloom": "Remember",
+"stationImg": "An outline of the anterior abdominopelvic wall overlaid with both the four-quadrant grid and the nine-region grid.",
+"question": "Which centrally located abdominopelvic region lies directly around the navel?",
+"options": {
+"A": "Epigastric",
+"B": "Hypogastric",
+"C": "Umbilical",
+"D": "Right lumbar"
+},
+"answer": "C",
+"rationale": "The umbilical region is the central region surrounding the umbilicus; epigastric is above it and hypogastric below."
+},
+{
+"s": 3,
+"q": 9,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify abdominopelvic body regions and quadrants.",
+"bloom": "Apply",
+"stationImg": "An outline of the anterior abdominopelvic wall overlaid with both the four-quadrant grid and the nine-region grid.",
+"question": "Pain located in the most superior central region, just inferior to the sternum, points to which region?",
+"options": {
+"A": "Hypogastric",
+"B": "Umbilical",
+"C": "Epigastric",
+"D": "Left iliac/inguinal"
+},
+"answer": "C",
+"rationale": "The epigastric region is the upper central region superior to the umbilical region."
+},
+{
+"s": 3,
+"q": 10,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Identify abdominopelvic body regions and quadrants.",
+"bloom": "Apply",
+"stationImg": "An outline of the anterior abdominopelvic wall overlaid with both the four-quadrant grid and the nine-region grid.",
+"question": "Using the four-quadrant scheme, the appendix area in the lower right of the abdomen is described as the:",
+"options": {
+"A": "Left lower quadrant",
+"B": "Right upper quadrant",
+"C": "Hypogastric region",
+"D": "Right lower quadrant"
+},
+"answer": "D",
+"rationale": "In the quadrant scheme the lower-right area is the right lower quadrant."
+},
+{
+"s": 4,
+"q": 11,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Be able to recognize body planes and sections.",
+"bloom": "Remember",
+"stationImg": "A human torso model shown with cut planes oriented through it and adjacent thin tissue sections demonstrating different cuts.",
+"question": "Which plane divides the body into anterior and posterior portions?",
+"options": {
+"A": "Transverse plane",
+"B": "Midsagittal plane",
+"C": "Oblique plane",
+"D": "Frontal (coronal) plane"
+},
+"answer": "D",
+"rationale": "The frontal (coronal) plane separates the body into front and back portions."
+},
+{
+"s": 4,
+"q": 12,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Be able to recognize body planes and sections.",
+"bloom": "Analyze",
+"stationImg": "A human torso model shown with cut planes oriented through it and adjacent thin tissue sections demonstrating different cuts.",
+"question": "A cut made exactly along the midline producing equal right and left halves differs from a parasagittal cut in that it is specifically termed the:",
+"options": {
+"A": "Parasagittal plane",
+"B": "Transverse plane",
+"C": "Frontal plane",
+"D": "Midsagittal plane"
+},
+"answer": "D",
+"rationale": "A midsagittal (median) cut is on the midline giving equal halves; a parasagittal cut is off-midline giving unequal halves."
+},
+{
+"s": 4,
+"q": 13,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Be able to recognize body planes and sections.",
+"bloom": "Understand",
+"stationImg": "A human torso model shown with cut planes oriented through it and adjacent thin tissue sections demonstrating different cuts.",
+"question": "A transverse (horizontal) plane produces what kind of section through an organ?",
+"options": {
+"A": "Cross section",
+"B": "Longitudinal section",
+"C": "Midsagittal section",
+"D": "Frontal section"
+},
+"answer": "A",
+"rationale": "A transverse/horizontal plane yields a cross section, cutting perpendicular to the long axis."
+},
+{
+"s": 5,
+"q": 14,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Remember",
+"stationImg": "A full-body human model in anatomical position with numerous surface regions of the limbs, trunk, and head indicated.",
+"question": "Which surface term refers to the armpit?",
+"options": {
+"A": "Inguinal",
+"B": "Axillary",
+"C": "Cervical",
+"D": "Plantar"
+},
+"answer": "B",
+"rationale": "Axillary designates the armpit; inguinal is the groin and cervical the neck."
+},
+{
+"s": 5,
+"q": 15,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Remember",
+"stationImg": "A full-body human model in anatomical position with numerous surface regions of the limbs, trunk, and head indicated.",
+"question": "The sole of the foot is described by which surface term?",
+"options": {
+"A": "Palmar",
+"B": "Dorsum",
+"C": "Plantar",
+"D": "Sural"
+},
+"answer": "C",
+"rationale": "Plantar refers to the sole of the foot; palmar is the palm of the hand."
+},
+{
+"s": 5,
+"q": 16,
+"ex": "Ex 1: Body Terminology, Cavities, Regions & Planes",
+"lo": "Know the anatomical terminology used to describe parts of the body.",
+"bloom": "Apply",
+"stationImg": "A full-body human model in anatomical position with numerous surface regions of the limbs, trunk, and head indicated.",
+"question": "A burn over the cervical region would affect which body part?",
+"options": {
+"A": "The wrist",
+"B": "The groin",
+"C": "The neck",
+"D": "The calf"
+},
+"answer": "C",
+"rationale": "Cervical refers to the neck region."
+},
+{
+"s": 6,
+"q": 17,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Know the difference between ionic and covalent bonds.",
+"bloom": "Remember",
+"stationImg": "Molecular diagrams contrasting two atoms sharing electrons versus one atom transferring an electron to another, alongside a dish of salt dissolving in water.",
+"question": "A chemical bond formed when one atom transfers an electron to another, creating oppositely charged ions, is a(n):",
+"options": {
+"A": "Covalent bond",
+"B": "Ionic bond",
+"C": "Buffer",
+"D": "Electrolyte"
+},
+"answer": "B",
+"rationale": "An ionic bond results from electron transfer producing oppositely charged ions that attract."
+},
+{
+"s": 6,
+"q": 18,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Know the difference between ionic and covalent bonds.",
+"bloom": "Understand",
+"stationImg": "Molecular diagrams contrasting two atoms sharing electrons versus one atom transferring an electron to another, alongside a dish of salt dissolving in water.",
+"question": "How does a covalent bond differ fundamentally from an ionic bond?",
+"options": {
+"A": "Electrons are transferred rather than shared",
+"B": "No electrons are involved",
+"C": "Electrons are shared rather than transferred",
+"D": "Protons are exchanged"
+},
+"answer": "C",
+"rationale": "Covalent bonds involve shared electrons, whereas ionic bonds involve electron transfer."
+},
+{
+"s": 6,
+"q": 19,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Know the definition of electrolytes.",
+"bloom": "Remember",
+"stationImg": "Molecular diagrams contrasting two atoms sharing electrons versus one atom transferring an electron to another, alongside a dish of salt dissolving in water.",
+"question": "An electrolyte is best defined as a substance that, when dissolved in water:",
+"options": {
+"A": "Forms only covalent bonds",
+"B": "Dissociates into ions and conducts electricity",
+"C": "Has a neutral pH",
+"D": "Acts as a buffer only"
+},
+"answer": "B",
+"rationale": "Electrolytes dissociate into ions in solution, enabling electrical conductivity."
+},
+{
+"s": 6,
+"q": 20,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Understand the concept of atomic bonding.",
+"bloom": "Understand",
+"stationImg": "Molecular diagrams contrasting two atoms sharing electrons versus one atom transferring an electron to another, alongside a dish of salt dissolving in water.",
+"question": "Atomic bonding in general involves interactions of which subatomic particles?",
+"options": {
+"A": "Neutrons",
+"B": "Electrons",
+"C": "Nuclei only",
+"D": "Protons in the nucleus"
+},
+"answer": "B",
+"rationale": "Bonding (ionic or covalent) is governed by the behavior of valence electrons."
+},
+{
+"s": 7,
+"q": 21,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Define pH.",
+"bloom": "Remember",
+"stationImg": "A pH color scale chart with several labeled body-fluid samples (blood, gastric juice, vaginal secretions) positioned along it.",
+"question": "pH is a measure of which property of a solution?",
+"options": {
+"A": "Electron sharing",
+"B": "Total dissolved oxygen",
+"C": "Hydrogen ion concentration",
+"D": "Number of covalent bonds"
+},
+"answer": "C",
+"rationale": "pH expresses the hydrogen ion (H+) concentration of a solution."
+},
+{
+"s": 7,
+"q": 22,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Define and give examples of common acids and bases in our body.",
+"bloom": "Remember",
+"stationImg": "A pH color scale chart with several labeled body-fluid samples (blood, gastric juice, vaginal secretions) positioned along it.",
+"question": "Which body fluid is a strongly acidic example?",
+"options": {
+"A": "Blood",
+"B": "Vaginal secretions only when basic",
+"C": "Gastric juice",
+"D": "Pure water"
+},
+"answer": "C",
+"rationale": "Gastric juice is highly acidic (pH ~1.5–3); blood is near neutral/slightly basic."
+},
+{
+"s": 7,
+"q": 23,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Define buffers.",
+"bloom": "Understand",
+"stationImg": "A pH color scale chart with several labeled body-fluid samples (blood, gastric juice, vaginal secretions) positioned along it.",
+"question": "A buffer functions in a body fluid to:",
+"options": {
+"A": "Increase electrical conductivity",
+"B": "Transfer electrons between atoms",
+"C": "Resist changes in pH",
+"D": "Dissolve all solutes"
+},
+"answer": "C",
+"rationale": "Buffers resist shifts in pH by neutralizing added acid or base."
+},
+{
+"s": 7,
+"q": 24,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Define and give examples of common acids and bases in our body.",
+"bloom": "Understand",
+"stationImg": "A pH color scale chart with several labeled body-fluid samples (blood, gastric juice, vaginal secretions) positioned along it.",
+"question": "Compared with gastric juice, blood is best characterized as:",
+"options": {
+"A": "Slightly basic and tightly regulated",
+"B": "Strongly acidic",
+"C": "Identical in pH",
+"D": "Without any buffering"
+},
+"answer": "A",
+"rationale": "Blood pH (7.35–7.45) is slightly basic and closely buffered, unlike acidic gastric juice."
+},
+{
+"s": 8,
+"q": 25,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Define pH.",
+"bloom": "Understand",
+"stationImg": "A bench setup with pH indicator paper/strips, a color comparison chart, and beakers of several test substances.",
+"question": "On the pH scale, a solution with a pH of 2 compared with one of pH 6 is:",
+"options": {
+"A": "More basic",
+"B": "Neutral",
+"C": "More acidic",
+"D": "Equal in acidity"
+},
+"answer": "C",
+"rationale": "Lower pH values indicate greater acidity; pH 2 is more acidic than pH 6."
+},
+{
+"s": 8,
+"q": 26,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Measure pH values of different substances.",
+"bloom": "Apply",
+"stationImg": "A bench setup with pH indicator paper/strips, a color comparison chart, and beakers of several test substances.",
+"question": "A test substance turns pH indicator paper to a color matching pH 8 on the chart. The substance is:",
+"options": {
+"A": "Basic",
+"B": "Acidic",
+"C": "Neutral",
+"D": "An electrolyte by definition"
+},
+"answer": "A",
+"rationale": "A pH above 7 indicates a basic (alkaline) solution."
+},
+{
+"s": 8,
+"q": 27,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Measure pH values of different substances.",
+"bloom": "Remember",
+"stationImg": "A bench setup with pH indicator paper/strips, a color comparison chart, and beakers of several test substances.",
+"question": "Which value on the pH scale represents a neutral solution?",
+"options": {
+"A": "7",
+"B": "1",
+"C": "3",
+"D": "14"
+},
+"answer": "A",
+"rationale": "A pH of 7 is neutral, with equal H+ and OH– activity."
+},
+{
+"s": 8,
+"q": 28,
+"ex": "Ex 2: Chemistry: Bonds, Electrolytes & pH",
+"lo": "Measure pH values of different substances.",
+"bloom": "Analyze",
+"stationImg": "A bench setup with pH indicator paper/strips, a color comparison chart, and beakers of several test substances.",
+"question": "Among samples measuring pH 1.5, 4.0, 7.4, and the blood reference, which is the MOST acidic?",
+"options": {
+"A": "The pH 7.4 blood sample",
+"B": "The pH 4.0 sample",
+"C": "The pH 1.5 sample (gastric juice range)",
+"D": "All are equally acidic"
+},
+"answer": "C",
+"rationale": "The lowest pH (1.5, gastric juice range) is the most acidic of the samples."
+},
+{
+"s": 9,
+"q": 29,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Identify major parts of the compound microscope and know the functions of these parts.",
+"bloom": "Remember",
+"stationImg": "A compound light microscope with all external structural components visible and accessible.",
+"question": "Which microscope part holds the objective lenses and rotates to change magnification?",
+"options": {
+"A": "Stage",
+"B": "Nosepiece",
+"C": "Base",
+"D": "Arm"
+},
+"answer": "B",
+"rationale": "The rotating nosepiece carries the objective lenses and turns to bring each into position."
+},
+{
+"s": 9,
+"q": 30,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Identify major parts of the compound microscope and know the functions of these parts.",
+"bloom": "Remember",
+"stationImg": "A compound light microscope with all external structural components visible and accessible.",
+"question": "The flat platform on which the microscope slide is placed is the:",
+"options": {
+"A": "Arm",
+"B": "Base",
+"C": "Nosepiece",
+"D": "Stage"
+},
+"answer": "D",
+"rationale": "The stage supports the microscope slide for viewing."
+},
+{
+"s": 9,
+"q": 31,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Learn the proper care and use of the microscope.",
+"bloom": "Remember",
+"stationImg": "A compound light microscope with all external structural components visible and accessible.",
+"question": "Which knob is used first, with the lowest power, to bring the specimen roughly into view?",
+"options": {
+"A": "Fine adjustment knob",
+"B": "Coarse adjustment knob",
+"C": "Mechanical stage knob",
+"D": "Substage disc"
+},
+"answer": "B",
+"rationale": "The coarse adjustment knob makes large focus changes and is used on low power first."
+},
+{
+"s": 9,
+"q": 32,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Identify major parts of the compound microscope and know the functions of these parts.",
+"bloom": "Remember",
+"stationImg": "A compound light microscope with all external structural components visible and accessible.",
+"question": "The lens you look through at the top of the body tube is the:",
+"options": {
+"A": "Objective lens",
+"B": "Eyepiece (ocular lens)",
+"C": "Substage lamp",
+"D": "Condenser disc"
+},
+"answer": "B",
+"rationale": "The eyepiece (ocular lens) is the upper lens through which the image is viewed."
+},
+{
+"s": 10,
+"q": 33,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Calculate total magnification while using various combinations of the objectives with the eyepiece.",
+"bloom": "Apply",
+"stationImg": "A compound microscope with the eyepiece and a rotating nosepiece holding scanning, low-power, and high-power objective lenses, each engraved with its magnification.",
+"question": "With a 10x eyepiece and the high-power objective of 40x, the total magnification is:",
+"options": {
+"A": "50x",
+"B": "40x",
+"C": "400x",
+"D": "4x"
+},
+"answer": "C",
+"rationale": "Total magnification = ocular x objective = 10 x 40 = 400x."
+},
+{
+"s": 10,
+"q": 34,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Learn the proper care and use of the microscope.",
+"bloom": "Understand",
+"stationImg": "A compound microscope with the eyepiece and a rotating nosepiece holding scanning, low-power, and high-power objective lenses, each engraved with its magnification.",
+"question": "Why should the fine adjustment knob, not the coarse, be used on high power?",
+"options": {
+"A": "It increases total magnification",
+"B": "It changes the objective lens",
+"C": "It turns on the substage lamp",
+"D": "It makes small focus changes that avoid striking the slide"
+},
+"answer": "D",
+"rationale": "On high power the objective is close to the slide; the fine adjustment makes small, safe focus changes."
+},
+{
+"s": 10,
+"q": 35,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Learn the proper care and use of the microscope.",
+"bloom": "Apply",
+"stationImg": "A compound microscope with the eyepiece and a rotating nosepiece holding scanning, low-power, and high-power objective lenses, each engraved with its magnification.",
+"question": "When finished viewing, which objective should be rotated into place before storing the microscope?",
+"options": {
+"A": "The high-power objective",
+"B": "The scanning (lowest power) objective",
+"C": "No objective; remove them all",
+"D": "The eyepiece"
+},
+"answer": "B",
+"rationale": "Returning to the lowest-power (scanning) objective protects the lenses during storage."
+},
+{
+"s": 10,
+"q": 36,
+"ex": "Ex 3: The Compound Microscope",
+"lo": "Calculate total magnification while using various combinations of the objectives with the eyepiece.",
+"bloom": "Apply",
+"stationImg": "A compound microscope with the eyepiece and a rotating nosepiece holding scanning, low-power, and high-power objective lenses, each engraved with its magnification.",
+"question": "Using a 10x eyepiece with the low-power objective of 10x yields a total magnification of:",
+"options": {
+"A": "20x",
+"B": "10x",
+"C": "100x",
+"D": "1000x"
+},
+"answer": "C",
+"rationale": "Total magnification = 10 x 10 = 100x."
+},
+{
+"s": 11,
+"q": 37,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Remember",
+"stationImg": "A large diagram of a generalized animal cell with all major membrane-bound and non-membrane organelles drawn and shaped distinctly.",
+"question": "Which organelle is the primary site of ATP production in the cell?",
+"options": {
+"A": "Ribosome",
+"B": "Mitochondria",
+"C": "Lysosome",
+"D": "Golgi apparatus"
+},
+"answer": "B",
+"rationale": "Mitochondria are the cell's main site of ATP (energy) production."
+},
+{
+"s": 11,
+"q": 38,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Remember",
+"stationImg": "A large diagram of a generalized animal cell with all major membrane-bound and non-membrane organelles drawn and shaped distinctly.",
+"question": "Which organelle packages and modifies proteins for secretion?",
+"options": {
+"A": "Mitochondria",
+"B": "Golgi apparatus",
+"C": "Peroxisome",
+"D": "Centriole"
+},
+"answer": "B",
+"rationale": "The Golgi apparatus modifies, sorts, and packages proteins."
+},
+{
+"s": 11,
+"q": 39,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Apply",
+"stationImg": "A large diagram of a generalized animal cell with all major membrane-bound and non-membrane organelles drawn and shaped distinctly.",
+"question": "A cell that secretes large amounts of protein would be expected to contain abundant:",
+"options": {
+"A": "Smooth endoplasmic reticulum",
+"B": "Rough endoplasmic reticulum",
+"C": "Lysosomes",
+"D": "Centrosomes"
+},
+"answer": "B",
+"rationale": "Rough ER is studded with ribosomes and synthesizes proteins; abundant rough ER indicates high protein output."
+},
+{
+"s": 11,
+"q": 40,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Remember",
+"stationImg": "A large diagram of a generalized animal cell with all major membrane-bound and non-membrane organelles drawn and shaped distinctly.",
+"question": "The membrane-bound sacs containing digestive enzymes are the:",
+"options": {
+"A": "Ribosomes",
+"B": "Nucleoli",
+"C": "Centrioles",
+"D": "Lysosomes"
+},
+"answer": "D",
+"rationale": "Lysosomes contain hydrolytic (digestive) enzymes."
+},
+{
+"s": 12,
+"q": 41,
+"ex": "Ex 4: Cell Structure",
+"lo": "Observe the organelles of a typical animal cell.",
+"bloom": "Remember",
+"stationImg": "A detailed animal-cell diagram emphasizing internal organelles and the nuclear region with its contents.",
+"question": "Which structure forms the boundary of the nucleus?",
+"options": {
+"A": "Cell membrane",
+"B": "Golgi apparatus",
+"C": "Nuclear envelope",
+"D": "Cytoplasm"
+},
+"answer": "C",
+"rationale": "The nuclear envelope surrounds the nucleus, separating it from the cytoplasm."
+},
+{
+"s": 12,
+"q": 42,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Understand",
+"stationImg": "A detailed animal-cell diagram emphasizing internal organelles and the nuclear region with its contents.",
+"question": "What is the principal role of the nucleolus within the nucleus?",
+"options": {
+"A": "It stores ATP",
+"B": "It digests worn organelles",
+"C": "It forms the spindle",
+"D": "It is the site of ribosome subunit production"
+},
+"answer": "D",
+"rationale": "The nucleolus is the dense region where ribosomal subunits are assembled."
+},
+{
+"s": 12,
+"q": 43,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Remember",
+"stationImg": "A detailed animal-cell diagram emphasizing internal organelles and the nuclear region with its contents.",
+"question": "In a non-dividing cell, the genetic material exists as a loosely organized network called:",
+"options": {
+"A": "Chromatin",
+"B": "Chromosomes",
+"C": "Centromere",
+"D": "Spindle apparatus"
+},
+"answer": "A",
+"rationale": "In interphase the DNA is dispersed as chromatin; it condenses into chromosomes during division."
+},
+{
+"s": 12,
+"q": 44,
+"ex": "Ex 4: Cell Structure",
+"lo": "Recognize the shapes and characteristics of the various organelles and learn their functions.",
+"bloom": "Remember",
+"stationImg": "A detailed animal-cell diagram emphasizing internal organelles and the nuclear region with its contents.",
+"question": "Small non-membranous structures that serve as sites of protein synthesis are the:",
+"options": {
+"A": "Lysosomes",
+"B": "Ribosomes",
+"C": "Peroxisomes",
+"D": "Centrioles"
+},
+"answer": "B",
+"rationale": "Ribosomes are the sites of protein synthesis and lack a membrane."
+},
+{
+"s": 13,
+"q": 45,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Recognize and describe the stages of mitosis.",
+"bloom": "Remember",
+"stationImg": "A series of micrograph-style panels showing a cell progressing through interphase and the successive phases of mitosis.",
+"question": "During which phase of mitosis do chromosomes line up along the cell's equatorial plane?",
+"options": {
+"A": "Metaphase",
+"B": "Prophase",
+"C": "Anaphase",
+"D": "Telophase"
+},
+"answer": "A",
+"rationale": "In metaphase the chromosomes align along the metaphase (equatorial) plate."
+},
+{
+"s": 13,
+"q": 46,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Recognize and describe the stages of mitosis.",
+"bloom": "Understand",
+"stationImg": "A series of micrograph-style panels showing a cell progressing through interphase and the successive phases of mitosis.",
+"question": "What key event characterizes anaphase?",
+"options": {
+"A": "Chromatin first condenses",
+"B": "Sister chromatids separate and move to opposite poles",
+"C": "Nuclear envelopes reform",
+"D": "Chromosomes align centrally"
+},
+"answer": "B",
+"rationale": "Anaphase is defined by separation of sister chromatids toward opposite poles."
+},
+{
+"s": 13,
+"q": 47,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Distinguish among the different stages of the cell cycle.",
+"bloom": "Understand",
+"stationImg": "A series of micrograph-style panels showing a cell progressing through interphase and the successive phases of mitosis.",
+"question": "Interphase differs from mitosis in that it is the period when the cell:",
+"options": {
+"A": "Separates sister chromatids",
+"B": "Grows and replicates its DNA",
+"C": "Divides the cytoplasm",
+"D": "Condenses chromosomes for division"
+},
+"answer": "B",
+"rationale": "Interphase is the non-dividing growth phase during which DNA is replicated."
+},
+{
+"s": 13,
+"q": 48,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Distinguish among the different stages of the cell cycle.",
+"bloom": "Remember",
+"stationImg": "A series of micrograph-style panels showing a cell progressing through interphase and the successive phases of mitosis.",
+"question": "Division of the cytoplasm that follows mitosis, producing two separate cells, is called:",
+"options": {
+"A": "Cytokinesis",
+"B": "Prophase",
+"C": "Interphase",
+"D": "Metaphase"
+},
+"answer": "A",
+"rationale": "Cytokinesis is the splitting of the cytoplasm into two daughter cells."
+},
+{
+"s": 14,
+"q": 49,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Use prepared slides to identify the phases of mitosis.",
+"bloom": "Apply",
+"stationImg": "Prepared-slide style panels of dividing cells (e.g., onion root tip / whitefish) frozen at different mitotic phases.",
+"question": "On a prepared slide, a cell showing chromosomes pulled into two distinct groups at opposite ends is in:",
+"options": {
+"A": "Metaphase",
+"B": "Prophase",
+"C": "Interphase",
+"D": "Anaphase"
+},
+"answer": "D",
+"rationale": "Two separating groups of chromosomes moving to opposite poles identify anaphase."
+},
+{
+"s": 14,
+"q": 50,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Use prepared slides to identify the phases of mitosis.",
+"bloom": "Apply",
+"stationImg": "Prepared-slide style panels of dividing cells (e.g., onion root tip / whitefish) frozen at different mitotic phases.",
+"question": "A slide cell in which a single line of chromosomes crosses the middle of the cell is in:",
+"options": {
+"A": "Metaphase",
+"B": "Anaphase",
+"C": "Telophase",
+"D": "Prophase"
+},
+"answer": "A",
+"rationale": "Chromosomes aligned in a single central row is the metaphase pattern."
+},
+{
+"s": 14,
+"q": 51,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Recognize and describe the stages of mitosis.",
+"bloom": "Remember",
+"stationImg": "Prepared-slide style panels of dividing cells (e.g., onion root tip / whitefish) frozen at different mitotic phases.",
+"question": "The first phase of mitosis, in which chromatin condenses into visible chromosomes, is:",
+"options": {
+"A": "Prophase",
+"B": "Metaphase",
+"C": "Anaphase",
+"D": "Telophase"
+},
+"answer": "A",
+"rationale": "Prophase is the first mitotic phase, marked by chromatin condensation."
+},
+{
+"s": 14,
+"q": 52,
+"ex": "Ex 5: The Cell Cycle",
+"lo": "Distinguish among the different stages of the cell cycle.",
+"bloom": "Understand",
+"stationImg": "Prepared-slide style panels of dividing cells (e.g., onion root tip / whitefish) frozen at different mitotic phases.",
+"question": "One parent cell undergoing mitosis produces how many daughter cells?",
+"options": {
+"A": "Two daughter cells",
+"B": "Four daughter cells",
+"C": "One daughter cell",
+"D": "Three daughter cells"
+},
+"answer": "A",
+"rationale": "Mitosis yields two daughter cells from one parent cell."
+},
+{
+"s": 15,
+"q": 53,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the concepts of Diffusion Filtration and Osmosis.",
+"bloom": "Remember",
+"stationImg": "Diagrams of a selectively permeable membrane with solute and water particles distributed across it, plus laboratory tubes set up for transport demonstrations.",
+"question": "The net movement of solute particles from an area of higher to lower concentration is:",
+"options": {
+"A": "Filtration",
+"B": "Diffusion",
+"C": "Osmosis",
+"D": "Crenation"
+},
+"answer": "B",
+"rationale": "Diffusion is movement of particles down their concentration gradient."
+},
+{
+"s": 15,
+"q": 54,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the concepts of Diffusion Filtration and Osmosis.",
+"bloom": "Remember",
+"stationImg": "Diagrams of a selectively permeable membrane with solute and water particles distributed across it, plus laboratory tubes set up for transport demonstrations.",
+"question": "The diffusion of water across a selectively permeable membrane is specifically termed:",
+"options": {
+"A": "Filtration",
+"B": "Crenation",
+"C": "Lysis",
+"D": "Osmosis"
+},
+"answer": "D",
+"rationale": "Osmosis is the diffusion of water across a selectively permeable membrane."
+},
+{
+"s": 15,
+"q": 55,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the terminology associated with these movements.",
+"bloom": "Apply",
+"stationImg": "Diagrams of a selectively permeable membrane with solute and water particles distributed across it, plus laboratory tubes set up for transport demonstrations.",
+"question": "A process driven by hydrostatic pressure pushing fluid and solutes through a membrane is:",
+"options": {
+"A": "Osmosis",
+"B": "Filtration",
+"C": "Diffusion",
+"D": "Crenation"
+},
+"answer": "B",
+"rationale": "Filtration uses pressure to force fluid and solutes across a membrane."
+},
+{
+"s": 15,
+"q": 56,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the terminology associated with these movements.",
+"bloom": "Remember",
+"stationImg": "Diagrams of a selectively permeable membrane with solute and water particles distributed across it, plus laboratory tubes set up for transport demonstrations.",
+"question": "A solution having the same solute concentration as the cell interior is described as:",
+"options": {
+"A": "Isotonic",
+"B": "Hypertonic",
+"C": "Hypotonic",
+"D": "Lysed"
+},
+"answer": "A",
+"rationale": "An isotonic solution has equal solute concentration relative to the cell."
+},
+{
+"s": 16,
+"q": 57,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the terminology associated with these movements.",
+"bloom": "Understand",
+"stationImg": "Beakers of cells immersed in solutions of differing solute concentration, showing cells in various states of water gain or loss.",
+"question": "A red blood cell placed in a hypotonic solution will tend to:",
+"options": {
+"A": "Lose water and shrink",
+"B": "Gain water and possibly undergo lysis",
+"C": "Remain unchanged",
+"D": "Form a buffer"
+},
+"answer": "B",
+"rationale": "In a hypotonic solution water enters the cell, which may swell and lyse."
+},
+{
+"s": 16,
+"q": 58,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the concepts of Diffusion Filtration and Osmosis.",
+"bloom": "Understand",
+"stationImg": "Beakers of cells immersed in solutions of differing solute concentration, showing cells in various states of water gain or loss.",
+"question": "Why does water move into a cell placed in a hypotonic solution?",
+"options": {
+"A": "Water follows its concentration gradient toward higher solute inside",
+"B": "Solute is pumped out actively",
+"C": "Filtration pressure pushes it in",
+"D": "The membrane becomes impermeable"
+},
+"answer": "A",
+"rationale": "Water osmoses toward the side with relatively higher solute concentration (inside the cell)."
+},
+{
+"s": 16,
+"q": 59,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the concepts of Diffusion Filtration and Osmosis.",
+"bloom": "Apply",
+"stationImg": "Beakers of cells immersed in solutions of differing solute concentration, showing cells in various states of water gain or loss.",
+"question": "A cell shrinks and its membrane wrinkles after immersion in a solution. The solution was:",
+"options": {
+"A": "Hypotonic",
+"B": "Hypertonic",
+"C": "Isotonic",
+"D": "A buffer"
+},
+"answer": "B",
+"rationale": "Shrinking (crenation) results from water leaving the cell in a hypertonic solution."
+},
+{
+"s": 16,
+"q": 60,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Be able to identify examples of these types of movements.",
+"bloom": "Understand",
+"stationImg": "Beakers of cells immersed in solutions of differing solute concentration, showing cells in various states of water gain or loss.",
+"question": "The wrinkling/shrinking of a red blood cell in a hypertonic solution is called:",
+"options": {
+"A": "Lysis",
+"B": "Filtration",
+"C": "Crenation",
+"D": "Diffusion"
+},
+"answer": "C",
+"rationale": "Crenation is the shrinking/notching of a cell that has lost water in a hypertonic solution."
+},
+{
+"s": 17,
+"q": 61,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Be able to identify examples of these types of movements.",
+"bloom": "Analyze",
+"stationImg": "A demonstration bench with dialysis/membrane tubing, glucose and starch test reagents (Benedict's, iodine), and diagrams of particles crossing a membrane.",
+"question": "Glucose diffuses out of dialysis tubing while large starch molecules remain inside. This demonstrates that the membrane is:",
+"options": {
+"A": "Impermeable to all solutes",
+"B": "Permeable to starch but not glucose",
+"C": "Actively pumping glucose",
+"D": "Selectively permeable based on molecule size"
+},
+"answer": "D",
+"rationale": "Small glucose passes while large starch is retained, showing size-based selective permeability."
+},
+{
+"s": 17,
+"q": 62,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Understand the physical processes by which molecules move through cell membranes.",
+"bloom": "Apply",
+"stationImg": "A demonstration bench with dialysis/membrane tubing, glucose and starch test reagents (Benedict's, iodine), and diagrams of particles crossing a membrane.",
+"question": "Which test would you use to confirm that glucose has diffused into the surrounding solution?",
+"options": {
+"A": "Benedict's test",
+"B": "Iodine test",
+"C": "pH paper",
+"D": "Crenation observation"
+},
+"answer": "A",
+"rationale": "Benedict's reagent detects glucose; the iodine test detects starch."
+},
+{
+"s": 17,
+"q": 63,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Know the terminology associated with these movements.",
+"bloom": "Remember",
+"stationImg": "A demonstration bench with dialysis/membrane tubing, glucose and starch test reagents (Benedict's, iodine), and diagrams of particles crossing a membrane.",
+"question": "Which reagent is used to test for the presence of starch?",
+"options": {
+"A": "Iodine test",
+"B": "Benedict's test",
+"C": "pH indicator",
+"D": "Saline"
+},
+"answer": "A",
+"rationale": "The iodine test indicates starch; Benedict's detects glucose."
+},
+{
+"s": 17,
+"q": 64,
+"ex": "Ex 6: Movements through Cell Membranes",
+"lo": "Be able to identify examples of these types of movements.",
+"bloom": "Apply",
+"stationImg": "A demonstration bench with dialysis/membrane tubing, glucose and starch test reagents (Benedict's, iodine), and diagrams of particles crossing a membrane.",
+"question": "If iodine inside the tubing turns dark but the surrounding water stays clear with Benedict's negative, you can conclude:",
+"options": {
+"A": "Both starch and glucose crossed freely",
+"B": "Starch stayed in while small molecules could move",
+"C": "Nothing crossed the membrane",
+"D": "The membrane was fully impermeable to water"
+},
+"answer": "B",
+"rationale": "A positive starch result inside with negative glucose outside shows large starch was retained while smaller molecules could pass."
+},
+{
+"s": 18,
+"q": 65,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of several epithelial tissue types arranged for comparison, showing differing cell shapes and layering.",
+"question": "A single layer of flat, scale-like cells is which epithelium?",
+"options": {
+"A": "Simple cuboidal",
+"B": "Stratified squamous",
+"C": "Transitional",
+"D": "Simple squamous"
+},
+"answer": "D",
+"rationale": "Simple squamous epithelium is one layer of flattened (scale-like) cells."
+},
+{
+"s": 18,
+"q": 66,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of several epithelial tissue types arranged for comparison, showing differing cell shapes and layering.",
+"question": "A single layer of cube-shaped cells with central round nuclei is:",
+"options": {
+"A": "Simple squamous",
+"B": "Pseudostratified columnar",
+"C": "Transitional",
+"D": "Simple cuboidal"
+},
+"answer": "D",
+"rationale": "Simple cuboidal epithelium is one layer of cube-shaped cells."
+},
+{
+"s": 18,
+"q": 67,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Apply",
+"stationImg": "Histology slides of several epithelial tissue types arranged for comparison, showing differing cell shapes and layering.",
+"question": "A surface specialized for rapid diffusion, such as the air sacs of the lungs, is lined by:",
+"options": {
+"A": "Stratified squamous epithelium",
+"B": "Transitional epithelium",
+"C": "Simple squamous epithelium",
+"D": "Simple columnar epithelium"
+},
+"answer": "C",
+"rationale": "Thin simple squamous epithelium permits rapid diffusion, ideal for gas exchange surfaces."
+},
+{
+"s": 18,
+"q": 68,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Understand",
+"stationImg": "Histology slides of several epithelial tissue types arranged for comparison, showing differing cell shapes and layering.",
+"question": "Why is stratified squamous epithelium suited to the skin surface?",
+"options": {
+"A": "Its single thin layer allows diffusion",
+"B": "It stretches like the bladder lining",
+"C": "It secretes large volumes of mucus",
+"D": "Multiple cell layers provide protection against abrasion"
+},
+"answer": "D",
+"rationale": "Stratified squamous epithelium's many layers protect against mechanical wear."
+},
+{
+"s": 19,
+"q": 69,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Understand",
+"stationImg": "High-power histology fields of epithelial tissues from various organ linings.",
+"question": "An epithelium that appears layered because nuclei sit at different heights, yet every cell touches the basement membrane, is:",
+"options": {
+"A": "Pseudostratified columnar",
+"B": "Stratified squamous",
+"C": "Simple cuboidal",
+"D": "Transitional"
+},
+"answer": "A",
+"rationale": "Pseudostratified columnar epithelium only appears multilayered; all cells reach the basement membrane."
+},
+{
+"s": 19,
+"q": 70,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Understand",
+"stationImg": "High-power histology fields of epithelial tissues from various organ linings.",
+"question": "The epithelium of the urinary bladder that can change shape as the organ fills is:",
+"options": {
+"A": "Simple squamous",
+"B": "Simple columnar",
+"C": "Transitional",
+"D": "Stratified squamous"
+},
+"answer": "C",
+"rationale": "Transitional epithelium stretches and changes shape, lining distensible urinary organs."
+},
+{
+"s": 19,
+"q": 71,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Remember",
+"stationImg": "High-power histology fields of epithelial tissues from various organ linings.",
+"question": "A single layer of tall, column-shaped cells is which epithelium?",
+"options": {
+"A": "Simple cuboidal",
+"B": "Simple columnar",
+"C": "Simple squamous",
+"D": "Transitional"
+},
+"answer": "B",
+"rationale": "Simple columnar epithelium is one layer of tall column-shaped cells."
+},
+{
+"s": 19,
+"q": 72,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Apply",
+"stationImg": "High-power histology fields of epithelial tissues from various organ linings.",
+"question": "A tissue lining specialized for absorption and secretion along the digestive tract is most likely:",
+"options": {
+"A": "Stratified squamous epithelium",
+"B": "Transitional epithelium",
+"C": "Simple squamous epithelium",
+"D": "Simple columnar epithelium"
+},
+"answer": "D",
+"rationale": "Simple columnar epithelium lines much of the digestive tract for absorption and secretion."
+},
+{
+"s": 20,
+"q": 73,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Remember",
+"stationImg": "A panel of epithelial histology slides paired with the body locations where each is found.",
+"question": "Stratified squamous epithelium is characteristically found in which location?",
+"options": {
+"A": "The outer layer of the skin",
+"B": "The air sacs of the lung",
+"C": "Kidney tubules",
+"D": "Bladder lining"
+},
+"answer": "A",
+"rationale": "Stratified squamous epithelium forms the protective outer skin layer."
+},
+{
+"s": 20,
+"q": 74,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Remember",
+"stationImg": "A panel of epithelial histology slides paired with the body locations where each is found.",
+"question": "Simple cuboidal epithelium is commonly found forming the walls of:",
+"options": {
+"A": "Kidney tubules",
+"B": "Lung air sacs",
+"C": "The epidermis",
+"D": "The urinary bladder lining"
+},
+"answer": "A",
+"rationale": "Simple cuboidal epithelium lines kidney tubules and many glands."
+},
+{
+"s": 20,
+"q": 75,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "Define tissue.",
+"bloom": "Remember",
+"stationImg": "A panel of epithelial histology slides paired with the body locations where each is found.",
+"question": "A tissue is best defined as:",
+"options": {
+"A": "A single specialized cell",
+"B": "An organ composed of two cavities",
+"C": "A chemical buffer system",
+"D": "A group of similar cells working together to perform a function"
+},
+"answer": "D",
+"rationale": "A tissue is a group of similar cells that perform a common function."
+},
+{
+"s": 20,
+"q": 76,
+"ex": "Ex 7: Epithelial Tissues",
+"lo": "List describe and identify the different types of epithelial tissue. Know their locations and functions.",
+"bloom": "Analyze",
+"stationImg": "A panel of epithelial histology slides paired with the body locations where each is found.",
+"question": "Comparing simple squamous and stratified squamous epithelia, the stratified type is better for protection because it:",
+"options": {
+"A": "Is thinner for faster diffusion",
+"B": "Contains only one cell layer",
+"C": "Changes shape when stretched",
+"D": "Has multiple layers that resist abrasion"
+},
+"answer": "D",
+"rationale": "Stratified squamous has many layers giving protection, unlike the single-layer simple squamous."
+},
+{
+"s": 21,
+"q": 77,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of loose and dense connective tissues showing fibers and scattered cells.",
+"question": "The cell type chiefly responsible for producing fibers in loose (areolar) connective tissue is the:",
+"options": {
+"A": "Chondrocyte",
+"B": "Osteocyte",
+"C": "Fibroblast",
+"D": "Red blood cell"
+},
+"answer": "C",
+"rationale": "Fibroblasts produce the fibers (collagen, elastic) of connective tissue proper."
+},
+{
+"s": 21,
+"q": 78,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of loose and dense connective tissues showing fibers and scattered cells.",
+"question": "Which fiber type provides high tensile strength in dense regular connective tissue?",
+"options": {
+"A": "Elastic fibers",
+"B": "Reticular fibers",
+"C": "Spindle fibers",
+"D": "Collagen fibers"
+},
+"answer": "D",
+"rationale": "Collagen fibers give dense regular connective tissue (tendons/ligaments) its tensile strength."
+},
+{
+"s": 21,
+"q": 79,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of loose and dense connective tissues showing fibers and scattered cells.",
+"question": "Which connective tissue contains a loose arrangement of fibers and is widely distributed beneath epithelia?",
+"options": {
+"A": "Dense regular connective tissue",
+"B": "Bone (osseous) tissue",
+"C": "Loose (areolar) connective tissue",
+"D": "Hyaline cartilage"
+},
+"answer": "C",
+"rationale": "Loose (areolar) connective tissue has loosely arranged fibers and underlies many epithelia."
+},
+{
+"s": 21,
+"q": 80,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Apply",
+"stationImg": "Histology slides of loose and dense connective tissues showing fibers and scattered cells.",
+"question": "A tendon, which must resist pulling forces in one direction, is composed of:",
+"options": {
+"A": "Loose (areolar) connective tissue",
+"B": "Adipose tissue",
+"C": "Blood",
+"D": "Dense regular connective tissue"
+},
+"answer": "D",
+"rationale": "Dense regular connective tissue, with parallel collagen, forms tendons that resist unidirectional tension."
+},
+{
+"s": 22,
+"q": 81,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of specialized connective tissues including adipose, reticular, and cartilage.",
+"question": "The connective tissue specialized for fat (energy) storage is:",
+"options": {
+"A": "Adipose",
+"B": "Reticular",
+"C": "Hyaline cartilage",
+"D": "Bone (osseous)"
+},
+"answer": "A",
+"rationale": "Adipose tissue stores fat and provides insulation and cushioning."
+},
+{
+"s": 22,
+"q": 82,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Understand",
+"stationImg": "Histology slides of specialized connective tissues including adipose, reticular, and cartilage.",
+"question": "The cell housed within a lacuna that maintains cartilage is the:",
+"options": {
+"A": "Osteocyte",
+"B": "Fibroblast",
+"C": "Chondrocyte",
+"D": "Reticular cell"
+},
+"answer": "C",
+"rationale": "Chondrocytes occupy lacunae and maintain the cartilage matrix."
+},
+{
+"s": 22,
+"q": 83,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of specialized connective tissues including adipose, reticular, and cartilage.",
+"question": "Which fibers form the supportive mesh framework of organs such as lymphoid tissue?",
+"options": {
+"A": "Collagen fibers",
+"B": "Elastic fibers",
+"C": "Spindle fibers",
+"D": "Reticular fibers"
+},
+"answer": "D",
+"rationale": "Reticular fibers form the fine supportive network (stroma) of soft organs."
+},
+{
+"s": 22,
+"q": 84,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Understand",
+"stationImg": "Histology slides of specialized connective tissues including adipose, reticular, and cartilage.",
+"question": "Hyaline cartilage differs from dense regular connective tissue in that it:",
+"options": {
+"A": "Is made only of parallel collagen bundles with fibroblasts",
+"B": "Is a fluid tissue with cells suspended in plasma",
+"C": "Has a firm matrix with chondrocytes in lacunae",
+"D": "Contains osteocytes in a calcified matrix"
+},
+"answer": "C",
+"rationale": "Hyaline cartilage has a firm gel matrix housing chondrocytes in lacunae, unlike fibrous tendon tissue."
+},
+{
+"s": 23,
+"q": 85,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of supporting and fluid connective tissues including bone and a blood smear.",
+"question": "The mature bone cell residing in a lacuna within the calcified matrix is the:",
+"options": {
+"A": "Chondrocyte",
+"B": "Fibroblast",
+"C": "Osteocyte",
+"D": "Red blood cell"
+},
+"answer": "C",
+"rationale": "Osteocytes are mature bone cells housed in lacunae of the bone matrix."
+},
+{
+"s": 23,
+"q": 86,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Understand",
+"stationImg": "Histology slides of supporting and fluid connective tissues including bone and a blood smear.",
+"question": "Blood is classified as a connective tissue because it consists of cells suspended in:",
+"options": {
+"A": "A solid calcified matrix",
+"B": "A fluid extracellular matrix (plasma)",
+"C": "Parallel collagen bundles",
+"D": "A gel-like cartilage matrix"
+},
+"answer": "B",
+"rationale": "Blood (vascular tissue) has formed elements suspended in plasma, a fluid matrix."
+},
+{
+"s": 23,
+"q": 87,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Apply",
+"stationImg": "Histology slides of supporting and fluid connective tissues including bone and a blood smear.",
+"question": "On a blood smear, the most numerous cells, which transport oxygen, are the:",
+"options": {
+"A": "White blood cells (WBCs)",
+"B": "Red blood cells (RBCs)",
+"C": "Platelets",
+"D": "Osteocytes"
+},
+"answer": "B",
+"rationale": "RBCs are the most numerous blood cells and carry oxygen."
+},
+{
+"s": 23,
+"q": 88,
+"ex": "Ex 8: Connective Tissues",
+"lo": "List describe and identify the different types of connective tissues and cell types.",
+"bloom": "Remember",
+"stationImg": "Histology slides of supporting and fluid connective tissues including bone and a blood smear.",
+"question": "The cell fragments in blood that function in clotting are the:",
+"options": {
+"A": "Red blood cells",
+"B": "White blood cells",
+"C": "Chondrocytes",
+"D": "Platelets"
+},
+"answer": "D",
+"rationale": "Platelets are cell fragments essential for blood clotting."
+},
+{
+"s": 24,
+"q": 89,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "List describe and identify the different types of muscle tissue. Know their location and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of the three muscle tissue types showing differences in striation, branching, and nuclei.",
+"question": "Which muscle tissue is striated, multinucleated, and under voluntary control?",
+"options": {
+"A": "Cardiac muscle",
+"B": "Smooth muscle",
+"C": "Nervous tissue",
+"D": "Skeletal muscle"
+},
+"answer": "D",
+"rationale": "Skeletal muscle is striated, multinucleated, and voluntary."
+},
+{
+"s": 24,
+"q": 90,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "List describe and identify the different types of muscle tissue. Know their location and functions.",
+"bloom": "Understand",
+"stationImg": "Histology slides of the three muscle tissue types showing differences in striation, branching, and nuclei.",
+"question": "Cardiac muscle is distinguished from skeletal muscle by being:",
+"options": {
+"A": "Striated, branched, and involuntary",
+"B": "Non-striated and voluntary",
+"C": "Multinucleated and voluntary",
+"D": "Smooth and found in the gut wall"
+},
+"answer": "A",
+"rationale": "Cardiac muscle is striated and branched but involuntary, unlike voluntary skeletal muscle."
+},
+{
+"s": 24,
+"q": 91,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "List describe and identify the different types of muscle tissue. Know their location and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of the three muscle tissue types showing differences in striation, branching, and nuclei.",
+"question": "The non-striated, involuntary muscle found in the walls of hollow organs is:",
+"options": {
+"A": "Skeletal muscle",
+"B": "Cardiac muscle",
+"C": "Smooth muscle",
+"D": "Neuroglia"
+},
+"answer": "C",
+"rationale": "Smooth muscle is non-striated and involuntary, found in hollow organ walls."
+},
+{
+"s": 24,
+"q": 92,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "List describe and identify the different types of muscle tissue. Know their location and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of the three muscle tissue types showing differences in striation, branching, and nuclei.",
+"question": "Which muscle tissue is found only in the wall of the heart?",
+"options": {
+"A": "Skeletal muscle",
+"B": "Smooth muscle",
+"C": "Cardiac muscle",
+"D": "Neurons"
+},
+"answer": "C",
+"rationale": "Cardiac muscle occurs exclusively in the heart wall."
+},
+{
+"s": 25,
+"q": 93,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "Describe and identify cells of nervous tissue. Know their location and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of nervous tissue showing large cell bodies with processes and smaller surrounding support cells.",
+"question": "The cell of nervous tissue specialized to conduct electrical impulses is the:",
+"options": {
+"A": "Neuron",
+"B": "Neuroglia",
+"C": "Chondrocyte",
+"D": "Fibroblast"
+},
+"answer": "A",
+"rationale": "Neurons conduct nerve impulses; neuroglia are supporting cells."
+},
+{
+"s": 25,
+"q": 94,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "Describe and identify cells of nervous tissue. Know their location and functions.",
+"bloom": "Remember",
+"stationImg": "Histology slides of nervous tissue showing large cell bodies with processes and smaller surrounding support cells.",
+"question": "The supporting (non-conducting) cells of nervous tissue are the:",
+"options": {
+"A": "Neurons",
+"B": "Osteocytes",
+"C": "Neuroglia",
+"D": "Platelets"
+},
+"answer": "C",
+"rationale": "Neuroglia support and protect neurons but do not transmit impulses."
+},
+{
+"s": 25,
+"q": 95,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "Describe and identify cells of nervous tissue. Know their location and functions.",
+"bloom": "Apply",
+"stationImg": "Histology slides of nervous tissue showing large cell bodies with processes and smaller surrounding support cells.",
+"question": "On a slide, the large cell with a prominent body and multiple slender processes extending outward is a:",
+"options": {
+"A": "Neuroglial cell",
+"B": "Chondrocyte",
+"C": "Red blood cell",
+"D": "Neuron"
+},
+"answer": "D",
+"rationale": "The large cell body with extending processes is the impulse-conducting neuron."
+},
+{
+"s": 25,
+"q": 96,
+"ex": "Ex 9: Muscular & Nervous Tissues",
+"lo": "Describe and identify cells of nervous tissue. Know their location and functions.",
+"bloom": "Understand",
+"stationImg": "Histology slides of nervous tissue showing large cell bodies with processes and smaller surrounding support cells.",
+"question": "Compared with neurons, neuroglia are generally:",
+"options": {
+"A": "Smaller and more numerous, providing support",
+"B": "Larger and impulse-conducting",
+"C": "Identical in function",
+"D": "Found only in the heart"
+},
+"answer": "A",
+"rationale": "Neuroglia are typically smaller, more numerous support cells, unlike conducting neurons."
+},
+{
+"s": 26,
+"q": 97,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Apply",
+"stationImg": "A human torso model with the thoracic and abdominal organs in place and removable.",
+"question": "On a torso model, the muscular organ in the mediastinum that pumps blood is the:",
+"options": {
+"A": "Liver",
+"B": "Stomach",
+"C": "Spleen",
+"D": "Heart"
+},
+"answer": "D",
+"rationale": "The heart is the mediastinal pump for blood."
+},
+{
+"s": 26,
+"q": 98,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Remember",
+"stationImg": "A human torso model with the thoracic and abdominal organs in place and removable.",
+"question": "The large gland in the right upper abdomen that produces bile is the:",
+"options": {
+"A": "Liver",
+"B": "Spleen",
+"C": "Stomach",
+"D": "Urinary bladder"
+},
+"answer": "A",
+"rationale": "The liver is the large right-upper-abdominal organ that produces bile."
+},
+{
+"s": 26,
+"q": 99,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Analyze",
+"stationImg": "A human torso model with the thoracic and abdominal organs in place and removable.",
+"question": "Tracing a swallowed food bolus on the torso model, the correct order through the digestive organs is:",
+"options": {
+"A": "Trachea → lungs → stomach → spleen",
+"B": "Esophagus → stomach → small intestine → large intestine",
+"C": "Stomach → esophagus → large intestine → small intestine",
+"D": "Larynx → esophagus → small intestine → stomach"
+},
+"answer": "B",
+"rationale": "Food passes esophagus → stomach → small intestine → large intestine."
+},
+{
+"s": 27,
+"q": 100,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Apply",
+"stationImg": "A human torso model focused on the abdominopelvic and endocrine/urinary organs.",
+"question": "The paired organs located retroperitoneally that filter blood to form urine are the:",
+"options": {
+"A": "Lungs",
+"B": "Kidneys",
+"C": "Ovaries",
+"D": "Adrenal glands"
+},
+"answer": "B",
+"rationale": "The kidneys filter blood and form urine."
+},
+{
+"s": 27,
+"q": 101,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Apply",
+"stationImg": "A human torso model focused on the abdominopelvic and endocrine/urinary organs.",
+"question": "The muscular sac that stores urine before elimination is the:",
+"options": {
+"A": "Stomach",
+"B": "Urinary bladder",
+"C": "Spleen",
+"D": "Thymus"
+},
+"answer": "B",
+"rationale": "The urinary bladder stores urine prior to elimination."
+},
+{
+"s": 27,
+"q": 102,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify major organs in human torso models.",
+"bloom": "Apply",
+"stationImg": "A human torso model focused on the abdominopelvic and endocrine/urinary organs.",
+"question": "The endocrine gland that caps the superior pole of each kidney is the:",
+"options": {
+"A": "Thyroid gland",
+"B": "Thymus",
+"C": "Spleen",
+"D": "Adrenal gland"
+},
+"answer": "D",
+"rationale": "An adrenal gland sits atop each kidney."
+},
+{
+"s": 28,
+"q": 103,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify the major anatomical features of the vertebrate body in a dissected specimen.",
+"bloom": "Apply",
+"stationImg": "A dissected vertebrate (rat) specimen with the body wall opened to expose thoracic and abdominal viscera.",
+"question": "In the opened thoracic cavity of the dissected specimen, the paired organs used for breathing are the:",
+"options": {
+"A": "Lungs",
+"B": "Kidneys",
+"C": "Ovaries",
+"D": "Liver lobes"
+},
+"answer": "A",
+"rationale": "The lungs occupy the thoracic cavity and function in breathing."
+},
+{
+"s": 28,
+"q": 104,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify the major anatomical features of the vertebrate body in a dissected specimen.",
+"bloom": "Apply",
+"stationImg": "A dissected vertebrate (rat) specimen with the body wall opened to expose thoracic and abdominal viscera.",
+"question": "The tube carrying air toward the lungs, identifiable by its cartilage rings, is the:",
+"options": {
+"A": "Trachea",
+"B": "Esophagus",
+"C": "Spinal cord",
+"D": "Small intestine"
+},
+"answer": "A",
+"rationale": "The trachea has cartilage rings and conducts air to the lungs; the esophagus lies behind it."
+},
+{
+"s": 28,
+"q": 105,
+"ex": "Ex 10: Major Organs: Torso Models & Rat Dissection",
+"lo": "Identify the major anatomical features of the vertebrate body in a dissected specimen.",
+"bloom": "Apply",
+"stationImg": "A dissected vertebrate (rat) specimen with the body wall opened to expose thoracic and abdominal viscera.",
+"question": "In the dissected abdomen, the J-shaped organ that receives food from the esophagus is the:",
+"options": {
+"A": "Large intestine",
+"B": "Urinary bladder",
+"C": "Spleen",
+"D": "Stomach"
+},
+"answer": "D",
+"rationale": "The stomach is the J-shaped organ receiving the esophagus and beginning chemical digestion."
+}
+]
