@@ -29,10 +29,8 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const seedDataPath = join(__dirname, '../data/seed-biol2402.json');
 const seedData = JSON.parse(readFileSync(seedDataPath, 'utf8'));
 
-// Station 17 filename has a trailing space
 function stationImageUrl(num) {
-  if (num === 17) return '/stations/BIOL 2402 Station #17 .png';
-  return `/stations/BIOL 2402 Station #${num}.png`;
+  return `/stations/BIOL 2402 Station ${num}.png`;
 }
 
 console.log('🚀 Starting BIOL 2402 database seed...\n');
