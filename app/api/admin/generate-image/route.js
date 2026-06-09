@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createClient } from '@supabase/supabase-js';
 
-const OPENROUTER_IMAGE_URL = 'https://openrouter.ai/api/v1/images/generations';
+const OPENROUTER_BASE = 'https://openrouter.ai/api/v1';
 const IMAGE_MODEL = 'black-forest-labs/flux-schnell';
 const BUCKET = 'station-images';
 
@@ -18,9 +18,42 @@ async function isAuthenticated() {
   return cookieStore.get('admin_session')?.value === 'authenticated';
 }
 
+function truncate(str, max = 400) {
+  if (!str || str.length <= max) return str;
+  return str.slice(0, max) + '…';
+}
+
+// Extract image data from OpenRouter response (handles multiple formats)
+function extractImage(orData) {
+  // Format 1: images/generations response — { data: [{ url, b64_json }] }
+  const imgData = orData.data?.[0];
+  if (imgData?.url) return { remoteUrl: imgData.url, b64: null };
+  if (imgData?.b64_json) return { remoteUrl: null, b64: imgData.b64_json };
+
+  // Format 2: chat/completions response — content is string or array
+  const content = orData.choices?.[0]?.message?.content;
+  if (!content) return null;
+
+  if (typeof content === 'string') {
+    if (content.startsWith('data:image')) {
+      return { remoteUrl: null, b64: content.split(',')[1] };
+    }
+    if (content.startsWith('http')) return { remoteUrl: content, b64: null };
+  }
+
+  if (Array.isArray(content)) {
+    const item = content.find(c => c.type === 'image_url');
+    const url = item?.image_url?.url;
+    if (!url) return null;
+    if (url.startsWith('data:image')) return { remoteUrl: null, b64: url.split(',')[1] };
+    return { remoteUrl: url, b64: null };
+  }
+
+  return null;
+}
+
 // POST /api/admin/generate-image
 // Body: { stationId: string, prompt: string }
-// Generates an image via OpenRouter → uploads to Supabase Storage → updates station.image_url
 export async function POST(request) {
   if (!(await isAuthenticated())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -28,55 +61,84 @@ export async function POST(request) {
 
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
-    return NextResponse.json({ error: 'OPENROUTER_API_KEY is not configured in environment variables' }, { status: 500 });
+    return NextResponse.json({ error: 'OPENROUTER_API_KEY not configured' }, { status: 500 });
   }
 
   const supabase = getSupabase();
-  const body = await request.json();
-  const { stationId, prompt } = body;
+  const { stationId, prompt } = await request.json();
 
   if (!stationId || !prompt?.trim()) {
     return NextResponse.json({ error: 'stationId and prompt are required' }, { status: 400 });
   }
 
-  // ── 1. Call OpenRouter image generation ──────────────────────────
-  let orRes;
+  const headers = {
+    'Authorization': `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+    'HTTP-Referer': 'https://station-exam-builder.vercel.app',
+    'X-Title': 'Station Exam Builder',
+  };
+
+  // ── 1. Try images/generations endpoint first ──────────────────────
+  let orData = null;
+  let usedEndpoint = 'images';
+
   try {
-    orRes = await fetch(OPENROUTER_IMAGE_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://station-exam-builder.vercel.app',
-        'X-Title': 'Station Exam Builder',
-      },
-      body: JSON.stringify({
-        model: IMAGE_MODEL,
-        prompt: prompt.trim(),
-        n: 1,
-        size: '1024x1024',
-      }),
+    const res = await fetch(`${OPENROUTER_BASE}/images/generations`, {
+      method: 'POST', headers,
+      body: JSON.stringify({ model: IMAGE_MODEL, prompt: prompt.trim(), n: 1, size: '1024x1024' }),
     });
+
+    if (res.ok) {
+      orData = await res.json();
+    } else {
+      const txt = await res.text();
+      console.log(`[generate-image] images endpoint failed (${res.status}):`, truncate(txt, 500));
+    }
   } catch (err) {
-    return NextResponse.json({ error: `OpenRouter request failed: ${err.message}` }, { status: 502 });
+    console.log('[generate-image] images endpoint error:', err.message);
   }
 
-  if (!orRes.ok) {
-    const errText = await orRes.text();
-    let errMsg;
-    try { errMsg = JSON.parse(errText)?.error?.message || errText; } catch { errMsg = errText; }
-    return NextResponse.json({ error: `OpenRouter error (${orRes.status}): ${errMsg}` }, { status: 502 });
+  // ── 2. Fallback: chat/completions endpoint (native Flux format) ───
+  if (!orData || !extractImage(orData)) {
+    usedEndpoint = 'chat';
+    try {
+      const res = await fetch(`${OPENROUTER_BASE}/chat/completions`, {
+        method: 'POST', headers,
+        body: JSON.stringify({
+          model: IMAGE_MODEL,
+          messages: [{ role: 'user', content: prompt.trim() }],
+        }),
+      });
+
+      if (res.ok) {
+        orData = await res.json();
+        console.log('[generate-image] chat endpoint raw response:', JSON.stringify(orData).slice(0, 300));
+      } else {
+        const txt = await res.text();
+        let msg;
+        try { msg = JSON.parse(txt)?.error?.message; } catch { msg = null; }
+        return NextResponse.json(
+          { error: `OpenRouter error (${res.status}): ${msg || truncate(txt)}` },
+          { status: 502 }
+        );
+      }
+    } catch (err) {
+      return NextResponse.json({ error: `OpenRouter request failed: ${err.message}` }, { status: 502 });
+    }
   }
 
-  const orData = await orRes.json();
-  const b64 = orData.data?.[0]?.b64_json;
-  const remoteUrl = orData.data?.[0]?.url;
-
-  if (!remoteUrl && !b64) {
-    return NextResponse.json({ error: 'No image returned from OpenRouter', raw: orData }, { status: 502 });
+  const extracted = extractImage(orData);
+  if (!extracted) {
+    console.log('[generate-image] Unexpected response structure:', JSON.stringify(orData).slice(0, 500));
+    return NextResponse.json(
+      { error: 'OpenRouter did not return an image. Check server logs for the full response.' },
+      { status: 502 }
+    );
   }
 
-  // ── 2. Get image bytes ────────────────────────────────────────────
+  const { remoteUrl, b64 } = extracted;
+
+  // ── 3. Get image bytes ────────────────────────────────────────────
   let imageBytes;
   let contentType = 'image/png';
 
@@ -87,18 +149,16 @@ export async function POST(request) {
   } else {
     const imgRes = await fetch(remoteUrl);
     if (!imgRes.ok) {
-      return NextResponse.json({ error: 'Failed to download generated image from OpenRouter' }, { status: 502 });
+      return NextResponse.json({ error: 'Failed to download generated image' }, { status: 502 });
     }
     contentType = imgRes.headers.get('content-type') || 'image/png';
-    const buf = await imgRes.arrayBuffer();
-    imageBytes = new Uint8Array(buf);
+    imageBytes = new Uint8Array(await imgRes.arrayBuffer());
   }
 
-  // ── 3. Upload to Supabase Storage (fallback to direct URL if bucket missing) ──
+  // ── 4. Upload to Supabase Storage (fallback to direct URL) ────────
   const ext = contentType.includes('jpeg') || contentType.includes('jpg') ? 'jpg' : 'png';
   const filename = `station-${stationId}-${Date.now()}.${ext}`;
-
-  let finalUrl = remoteUrl; // fallback: use OpenRouter's URL directly
+  let finalUrl = remoteUrl;
 
   const { error: uploadError } = await supabase.storage
     .from(BUCKET)
@@ -107,10 +167,11 @@ export async function POST(request) {
   if (!uploadError) {
     const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
     finalUrl = publicUrl;
+  } else {
+    console.log('[generate-image] Storage upload failed (using direct URL):', uploadError.message);
   }
-  // If upload failed (e.g. bucket not yet created), we fall through with remoteUrl
 
-  // ── 4. Update station record ──────────────────────────────────────
+  // ── 5. Update station record ──────────────────────────────────────
   const { error: updateError } = await supabase
     .from('stations')
     .update({ image_url: finalUrl })
@@ -123,6 +184,7 @@ export async function POST(request) {
   return NextResponse.json({
     imageUrl: finalUrl,
     model: IMAGE_MODEL,
-    stored: !uploadError ? 'supabase' : 'temporary-url',
+    endpoint: usedEndpoint,
+    stored: !uploadError ? 'supabase' : 'direct-url',
   });
 }

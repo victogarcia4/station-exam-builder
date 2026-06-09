@@ -297,7 +297,7 @@ function ImageGenModal({ station, onClose, onGenerated }) {
                     Generating…
                   </div>
                 )}
-                {genError && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)' }}>{genError}</p>}
+                {genError && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)', wordBreak: 'break-word', maxHeight: '80px', overflowY: 'auto' }}>{genError.slice(0, 300)}{genError.length > 300 ? '…' : ''}</p>}
 
                 <div style={{ display: 'flex', gap: '0.75rem' }}>
                   <button className="btn" onClick={onClose} style={{ flex: 1 }}>{genStatus === 'done' ? 'Done' : 'Cancel'}</button>
