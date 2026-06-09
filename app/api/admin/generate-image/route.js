@@ -39,17 +39,6 @@ export async function POST(request) {
     return NextResponse.json({ error: 'stationId and prompt are required' }, { status: 400 });
   }
 
-  // Verify station exists
-  const { data: station } = await supabase
-    .from('stations')
-    .select('id, number, exercise')
-    .eq('id', stationId)
-    .single();
-
-  if (!station) {
-    return NextResponse.json({ error: 'Station not found' }, { status: 404 });
-  }
-
   // ── 1. Call OpenRouter image generation ──────────────────────────
   let orRes;
   try {
@@ -80,7 +69,6 @@ export async function POST(request) {
   }
 
   const orData = await orRes.json();
-  const generatedUrl = orData.data?.[0]?.url || orData.data?.[0]?.b64_json ? null : null;
   const b64 = orData.data?.[0]?.b64_json;
   const remoteUrl = orData.data?.[0]?.url;
 
@@ -106,29 +94,35 @@ export async function POST(request) {
     imageBytes = new Uint8Array(buf);
   }
 
-  // ── 3. Upload to Supabase Storage ─────────────────────────────────
+  // ── 3. Upload to Supabase Storage (fallback to direct URL if bucket missing) ──
   const ext = contentType.includes('jpeg') || contentType.includes('jpg') ? 'jpg' : 'png';
   const filename = `station-${stationId}-${Date.now()}.${ext}`;
+
+  let finalUrl = remoteUrl; // fallback: use OpenRouter's URL directly
 
   const { error: uploadError } = await supabase.storage
     .from(BUCKET)
     .upload(filename, imageBytes, { contentType, upsert: true });
 
-  if (uploadError) {
-    return NextResponse.json({ error: `Storage upload failed: ${uploadError.message}` }, { status: 500 });
+  if (!uploadError) {
+    const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
+    finalUrl = publicUrl;
   }
-
-  const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
+  // If upload failed (e.g. bucket not yet created), we fall through with remoteUrl
 
   // ── 4. Update station record ──────────────────────────────────────
   const { error: updateError } = await supabase
     .from('stations')
-    .update({ image_url: publicUrl })
+    .update({ image_url: finalUrl })
     .eq('id', stationId);
 
   if (updateError) {
     return NextResponse.json({ error: `DB update failed: ${updateError.message}` }, { status: 500 });
   }
 
-  return NextResponse.json({ imageUrl: publicUrl, model: IMAGE_MODEL });
+  return NextResponse.json({
+    imageUrl: finalUrl,
+    model: IMAGE_MODEL,
+    stored: !uploadError ? 'supabase' : 'temporary-url',
+  });
 }

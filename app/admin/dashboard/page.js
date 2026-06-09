@@ -158,16 +158,59 @@ function buildStationPrompt(exercise, objectives) {
 }
 
 function ImageGenModal({ station, onClose, onGenerated }) {
-  const [prompt, setPrompt] = useState(() => buildStationPrompt(station.exercise, station.learning_objectives));
-  const [status, setStatus] = useState('idle'); // idle | generating | done | error
-  const [generatedUrl, setGeneratedUrl] = useState(null);
-  const [error, setError] = useState('');
+  const [activeTab, setActiveTab] = useState('generate'); // 'generate' | 'upload'
 
-  const displayImage = generatedUrl || station.image_url;
+  // AI generate state
+  const [prompt, setPrompt] = useState(() => buildStationPrompt(station.exercise, station.learning_objectives));
+  const [genStatus, setGenStatus] = useState('idle'); // idle | generating | done | error
+  const [genError, setGenError] = useState('');
+  const [generatedUrl, setGeneratedUrl] = useState(null);
+
+  // Upload state
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [uploadPreview, setUploadPreview] = useState(null);
+  const [uploadStatus, setUploadStatus] = useState('idle'); // idle | uploading | done | error
+  const [uploadError, setUploadError] = useState('');
+  const [dragOver, setDragOver] = useState(false);
+  const fileInputRef = useRef(null);
+
+  const savedUrl = generatedUrl || (uploadStatus === 'done' ? uploadPreview : null);
+  const displayImage = savedUrl || uploadPreview || station.image_url;
+  const isSaved = !!(generatedUrl || uploadStatus === 'done');
+
+  function handleFileSelect(file) {
+    if (!file) return;
+    const allowed = ['image/png', 'image/jpeg', 'image/webp'];
+    if (!allowed.includes(file.type)) { setUploadError('Only PNG, JPEG, WebP allowed'); return; }
+    if (file.size > 5 * 1024 * 1024) { setUploadError('Max file size is 5 MB'); return; }
+    setUploadError('');
+    setUploadStatus('idle');
+    setSelectedFile(file);
+    setUploadPreview(URL.createObjectURL(file));
+  }
+
+  async function handleUpload() {
+    if (!selectedFile) return;
+    setUploadStatus('uploading');
+    setUploadError('');
+    try {
+      const fd = new FormData();
+      fd.append('file', selectedFile);
+      fd.append('stationId', station.id);
+      const res = await fetch('/api/admin/upload-image', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      setUploadStatus('done');
+      onGenerated();
+    } catch (err) {
+      setUploadError(err.message);
+      setUploadStatus('error');
+    }
+  }
 
   async function generate() {
-    setStatus('generating');
-    setError('');
+    setGenStatus('generating');
+    setGenError('');
     try {
       const res = await fetch('/api/admin/generate-image', {
         method: 'POST',
@@ -177,96 +220,138 @@ function ImageGenModal({ station, onClose, onGenerated }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Generation failed');
       setGeneratedUrl(data.imageUrl);
-      setStatus('done');
+      setGenStatus('done');
       onGenerated();
     } catch (err) {
-      setError(err.message);
-      setStatus('error');
+      setGenError(err.message);
+      setGenStatus('error');
     }
   }
 
   const inputStyle = { width: '100%', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', background: 'var(--bg-surface)', color: 'var(--text-primary)', fontSize: 'var(--fs-sm)' };
   const labelStyle = { display: 'block', fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' };
+  const tabStyle = active => ({
+    padding: '0.35rem 1rem', borderRadius: '999px', fontSize: 'var(--fs-xs)', fontWeight: active ? 700 : 500,
+    cursor: 'pointer', border: `1px solid ${active ? 'var(--accent)' : 'var(--border-default)'}`,
+    background: active ? 'var(--accent)' : 'transparent',
+    color: active ? '#fff' : 'var(--text-secondary)', transition: 'all 150ms',
+  });
 
   return (
     <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="card" style={{ width: '100%', maxWidth: '780px', padding: '2rem' }}>
+      <div className="card" style={{ width: '100%', maxWidth: '800px', padding: '2rem' }}>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+        {/* Header */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
           <div>
-            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'var(--fs-xl)', margin: 0 }}>Generate Station Image</h2>
+            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'var(--fs-xl)', margin: 0 }}>Station Image</h2>
             <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
-              Station {station.number} — {station.exercise} · <span style={{ color: '#8b5cf6' }}>flux-schnell</span>
+              Station {station.number} — {station.exercise}
             </p>
           </div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', color: 'var(--text-secondary)', padding: '0.25rem' }}>✕</button>
         </div>
 
+        {/* Tab switcher */}
+        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
+          <button style={tabStyle(activeTab === 'generate')} onClick={() => setActiveTab('generate')}>✨ AI Generate</button>
+          <button style={tabStyle(activeTab === 'upload')} onClick={() => setActiveTab('upload')}>📁 Upload Image</button>
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
 
-          {/* Image preview */}
+          {/* Image preview — shared between both tabs */}
           <div>
-            <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              {generatedUrl ? '✓ Generated image (saved)' : 'Current image'}
+            <div style={{ ...labelStyle, marginBottom: '0.5rem' }}>
+              {isSaved ? '✓ Saved to station' : activeTab === 'upload' && uploadPreview ? 'Preview' : 'Current image'}
             </div>
             {displayImage ? (
-              <img
-                src={displayImage}
-                alt={`Station ${station.number}`}
-                style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 'var(--radius-sm)', border: `2px solid ${generatedUrl ? '#10b981' : 'var(--border-default)'}` }}
-              />
+              <img src={displayImage} alt={`Station ${station.number}`}
+                style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 'var(--radius-sm)', border: `2px solid ${isSaved ? '#10b981' : 'var(--border-default)'}` }} />
             ) : (
               <div style={{ width: '100%', aspectRatio: '1', background: 'var(--bg-surface)', borderRadius: 'var(--radius-sm)', border: '2px dashed var(--border-default)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-tertiary)', fontSize: 'var(--fs-sm)' }}>
                 No image yet
               </div>
             )}
-            {generatedUrl && (
-              <p style={{ fontSize: 'var(--fs-xs)', color: '#10b981', marginTop: '0.4rem', textAlign: 'center' }}>
-                Saved to station — visible on exam immediately
-              </p>
-            )}
+            {isSaved && <p style={{ fontSize: 'var(--fs-xs)', color: '#10b981', marginTop: '0.4rem', textAlign: 'center' }}>Visible on exam immediately</p>}
           </div>
 
-          {/* Prompt + controls */}
+          {/* Right panel — changes by tab */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div>
-              <label style={labelStyle}>Prompt</label>
-              <textarea
-                style={{ ...inputStyle, minHeight: '160px', resize: 'vertical', fontFamily: 'inherit', lineHeight: 1.5 }}
-                value={prompt}
-                onChange={e => setPrompt(e.target.value)}
-              />
-              <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)', marginTop: '0.35rem' }}>
-                Edit to refine the result. Model: black-forest-labs/flux-schnell
-              </p>
-            </div>
 
-            {status === 'generating' && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)' }}>
-                <span style={{ display: 'inline-block', width: '14px', height: '14px', border: '2px solid var(--accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-                Generating image…
-              </div>
+            {/* ── AI Generate tab ── */}
+            {activeTab === 'generate' && (
+              <>
+                <div>
+                  <label style={labelStyle}>Prompt</label>
+                  <textarea style={{ ...inputStyle, minHeight: '150px', resize: 'vertical', fontFamily: 'inherit', lineHeight: 1.5 }}
+                    value={prompt} onChange={e => setPrompt(e.target.value)} />
+                  <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)', marginTop: '0.3rem' }}>
+                    Model: black-forest-labs/flux-schnell
+                  </p>
+                </div>
+
+                {genStatus === 'generating' && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)' }}>
+                    <span style={{ display: 'inline-block', width: '14px', height: '14px', border: '2px solid var(--accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+                    Generating…
+                  </div>
+                )}
+                {genError && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)' }}>{genError}</p>}
+
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <button className="btn" onClick={onClose} style={{ flex: 1 }}>{genStatus === 'done' ? 'Done' : 'Cancel'}</button>
+                  <button className="btn btn--primary" onClick={generate} disabled={genStatus === 'generating' || !prompt.trim()} style={{ flex: 1 }}>
+                    {genStatus === 'generating' ? 'Generating…' : genStatus === 'done' ? '↺ Regenerate' : '✨ Generate'}
+                  </button>
+                </div>
+              </>
             )}
 
-            {error && (
-              <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)' }}>
-                {error}
-              </p>
-            )}
+            {/* ── Upload tab ── */}
+            {activeTab === 'upload' && (
+              <>
+                {/* Drop zone */}
+                <div
+                  onDragOver={e => { e.preventDefault(); setDragOver(true); }}
+                  onDragLeave={() => setDragOver(false)}
+                  onDrop={e => { e.preventDefault(); setDragOver(false); handleFileSelect(e.dataTransfer.files[0]); }}
+                  onClick={() => fileInputRef.current?.click()}
+                  style={{
+                    border: `2px dashed ${dragOver ? 'var(--accent)' : 'var(--border-default)'}`,
+                    borderRadius: 'var(--radius-sm)', padding: '2rem', textAlign: 'center',
+                    cursor: 'pointer', transition: 'border-color 150ms',
+                    background: dragOver ? 'rgba(var(--accent-rgb, 99,102,241),0.05)' : 'transparent',
+                  }}
+                >
+                  <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📁</div>
+                  <p style={{ fontSize: 'var(--fs-sm)', color: 'var(--text-secondary)', margin: 0 }}>
+                    {selectedFile ? selectedFile.name : 'Drop image here or click to browse'}
+                  </p>
+                  <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-tertiary)', marginTop: '0.3rem' }}>PNG, JPEG, WebP · max 5 MB</p>
+                </div>
+                <input ref={fileInputRef} type="file" accept="image/png,image/jpeg,image/webp" style={{ display: 'none' }}
+                  onChange={e => handleFileSelect(e.target.files[0])} />
 
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button className="btn" onClick={onClose} style={{ flex: 1 }}>
-                {status === 'done' ? 'Done' : 'Cancel'}
-              </button>
-              <button
-                className="btn btn--primary"
-                onClick={generate}
-                disabled={status === 'generating' || !prompt.trim()}
-                style={{ flex: 1 }}
-              >
-                {status === 'generating' ? 'Generating…' : status === 'done' ? '↺ Regenerate' : '✨ Generate'}
-              </button>
-            </div>
+                {uploadError && <p style={{ color: '#ef4444', fontSize: 'var(--fs-sm)', background: 'rgba(239,68,68,0.08)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-sm)' }}>{uploadError}</p>}
+                {uploadStatus === 'done' && <p style={{ color: '#10b981', fontSize: 'var(--fs-sm)' }}>✓ Image uploaded and saved!</p>}
+
+                {uploadStatus === 'uploading' && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)' }}>
+                    <span style={{ display: 'inline-block', width: '14px', height: '14px', border: '2px solid var(--accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+                    Uploading…
+                  </div>
+                )}
+
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <button className="btn" onClick={onClose} style={{ flex: 1 }}>{uploadStatus === 'done' ? 'Done' : 'Cancel'}</button>
+                  <button className="btn btn--primary" onClick={handleUpload}
+                    disabled={!selectedFile || uploadStatus === 'uploading'} style={{ flex: 1 }}>
+                    {uploadStatus === 'uploading' ? 'Uploading…' : uploadStatus === 'done' ? '↺ Replace' : '⬆ Upload'}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
